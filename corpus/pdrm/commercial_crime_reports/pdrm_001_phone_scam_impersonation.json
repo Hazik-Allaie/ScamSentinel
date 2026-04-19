@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-001",
+  "source": "pdrm",
+  "title": "PDRM Commercial Crime: Phone Scam Impersonation of Government Officials",
+  "category": "impersonation",
+  "date_published": "2025-11-15",
+  "content": "The Royal Malaysia Police (PDRM) Commercial Crime Investigation Department (CCID) warns the public about an increasing trend of phone scam impersonation involving individuals posing as police officers, Lembaga Hasil Dalam Negeri (LHDN) tax officers, and court officials. Scammers typically call victims claiming there is an outstanding warrant, unpaid tax, or legal case linked to their identity card (IC) number. The caller instructs the victim to transfer money to a 'safe account' to avoid arrest. Common indicators include: (1) Caller claims to be from 'Balai Polis' or 'Mahkamah' and uses official-sounding language, (2) Victim is told their IC has been used in money laundering, (3) Caller demands immediate transfer via online banking to a third-party account, (4) Victim is told not to tell family members. Between January and October 2025, PDRM recorded over 4,200 cases of Macau Scam variants with total losses exceeding RM 380 million. The public is reminded that PDRM, LHDN, and the courts will NEVER request money transfers over the phone. If you receive such a call, hang up immediately and report to the nearest police station or call the CCID Scam Response Centre at 03-2610 1559.",
+  "threat_indicators": ["phone call from unknown number", "claims to be police officer", "demands money transfer", "threatens arrest", "mentions IC number", "Macau Scam"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

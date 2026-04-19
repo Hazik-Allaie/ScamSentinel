@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-008",
+  "source": "bnm",
+  "title": "BNM Advisory: Social Engineering Attacks Targeting Online Banking Users",
+  "category": "phishing",
+  "date_published": "2025-07-10",
+  "content": "Bank Negara Malaysia (BNM) alerts the public to sophisticated social engineering attacks targeting online banking users in Malaysia. Fraudsters use psychological manipulation to trick victims into revealing banking credentials, OTPs, and TAC numbers. Current attack vectors include: (1) Vishing (voice phishing) — scammers call pretending to be bank officers alerting the victim of 'suspicious transactions', then guide them to a phishing website to 'verify' their identity by entering their username, password, and OTP, (2) Smishing (SMS phishing) — fraudulent SMS messages mimicking bank alerts with links to fake banking login pages, (3) Screen-sharing scams — scammers convince victims to install remote access apps like AnyDesk or TeamViewer, then take control of the victim's device to perform transactions, (4) SIM swap attacks — criminals impersonate the victim at a telco outlet to obtain a replacement SIM, intercepting OTP messages. BNM's financial fraud statistics show social engineering accounts for 67% of all reported online banking fraud in Malaysia (H1 2025), with total losses of RM 287 million. Banks are required under BNM's Risk Management in Technology (RMiT) guidelines to implement behavioural analytics and anomaly detection. Consumers should: never share OTPs or TAC numbers with anyone, never install remote access apps at a caller's request, enable biometric authentication, and report suspicious calls to their bank immediately.",
+  "threat_indicators": ["bank officer impersonation call", "OTP request via phone", "fake bank SMS", "AnyDesk installation request", "TeamViewer scam", "SIM swap", "screen sharing request"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-004",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Fake E-Commerce Websites and Social Media Shopping Scams",
+  "category": "online_purchase_scam",
+  "date_published": "2025-09-10",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) warns online shoppers about a surge in fraudulent e-commerce websites and social media shopping scams in Malaysia. Scammers create professional-looking online stores or social media business accounts selling popular items (electronics, branded goods, concert tickets) at heavily discounted prices. Fraud patterns identified by MCMC: (1) Fake Shopee/Lazada lookalike websites with near-identical interfaces but different domain names (e.g., shopee-deals-my.com, lazada-flash-sale.net), (2) Instagram and Facebook business pages selling branded goods at 70-90% discount with payment directed to personal bank accounts, (3) Fake TikTok Shop promotions redirecting users to external payment pages, (4) Fraudulent concert/event ticket sales on social media with fake e-ticket PDFs, (5) Non-delivery after payment — victims receive tracking numbers for packages that either don't exist or contain worthless items. MCMC has taken enforcement action against 4,200 fraudulent websites and social media accounts in 2025 under Section 233 of the Communications and Multimedia Act 1998. Consumer losses from online purchase scams reached RM 196 million in Jan-Sep 2025. Always shop on verified platforms, check seller ratings, and use platform-protected payment methods rather than direct bank transfers. Report fraudulent websites to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["heavily discounted branded goods", "payment to personal bank account", "fake Shopee website", "fake Lazada website", "Instagram luxury goods scam", "non-delivery after payment"],
+  "risk_level": "MEDIUM",
+  "region": "nationwide",
+  "language": "en"
+}

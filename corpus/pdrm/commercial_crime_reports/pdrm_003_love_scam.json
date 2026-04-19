@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-003",
+  "source": "pdrm",
+  "title": "PDRM Warning: Love Scam Targeting Malaysian Professionals",
+  "category": "romance_scam",
+  "date_published": "2025-08-10",
+  "content": "PDRM CCID issues a warning regarding romance scams (love scams) that have caused devastating financial losses among Malaysian professionals aged 30-55. Scammers create fake profiles on dating apps (Tinder, Bumble) and social media, often posing as foreign military personnel, engineers working overseas, or wealthy business owners. The relationship develops over weeks or months before the scammer fabricates an emergency requiring money: stuck at customs, medical emergency, investment opportunity, or sending a 'gift' that requires customs fees. Key warning signs: (1) Person claims to be overseas and cannot video call, (2) Relationship progresses unusually fast with declarations of love, (3) Stories involve international travel, military service, or oil rig work, (4) Money requests start small and escalate, (5) Victim is asked to invest in cryptocurrency or forex together. In 2025, love scam losses in Malaysia exceeded RM 250 million with 2,100 cases reported. Victims include doctors, lawyers, and corporate executives. PDRM emphasises: never send money to someone you have not met in person.",
+  "threat_indicators": ["dating app", "foreign profile", "cannot video call", "money request", "customs fees", "cryptocurrency investment", "love scam"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

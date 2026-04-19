@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-001",
+  "source": "bnm",
+  "title": "BNM Advisory: Unauthorised Financial Schemes and Unlicensed Entities",
+  "category": "investment_scam",
+  "date_published": "2025-10-30",
+  "content": "Bank Negara Malaysia (BNM) warns the public against dealing with unauthorised financial schemes and unlicensed entities operating in Malaysia. These entities offer deposit-taking, foreign exchange trading, digital asset trading, or money lending services without a valid BNM licence. Consumers who invest with unlicensed entities have NO legal protection under Malaysian financial laws. BNM maintains an updated Financial Consumer Alert (FCA) list at https://www.bnm.gov.my/consumer-alert. As of October 2025, the FCA list contains over 800 entities. Common characteristics of unauthorised schemes: (1) Promises of guaranteed or unusually high returns (above 10% per month), (2) Pressure to invest quickly with limited-time offers, (3) Lack of registration with BNM or Securities Commission Malaysia, (4) Payment requested to personal bank accounts rather than corporate accounts, (5) Operating primarily through social media and messaging apps, (6) Use of celebrity endorsements or fake testimonials. BNM strongly advises: ALWAYS verify the entity against the FCA list before investing. Report suspected unauthorised schemes to BNM LINK at 1-300-88-5465 or email bnmtelelink@bnm.gov.my.",
+  "threat_indicators": ["unlicensed entity", "guaranteed returns", "no BNM licence", "personal bank account payment", "Financial Consumer Alert list"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

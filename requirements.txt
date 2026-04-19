@@ -1,0 +1,25 @@
+# ── Pinned compatible versions (resolves pip backtracking) ───
+fastapi==0.115.12
+uvicorn[standard]==0.34.2
+pydantic==2.11.3
+python-multipart==0.0.20
+
+# ── Google Cloud SDKs (pinned to latest compatible set) ──────
+firebase-admin==6.8.0
+google-cloud-firestore==2.20.1
+google-cloud-discoveryengine==0.13.12
+google-generativeai==0.8.5
+google-genai>=1.73.0
+google-api-core==2.24.2
+google-cloud-core==2.4.3
+proto-plus==1.26.1
+grpcio==1.69.0
+grpcio-status==1.69.0
+
+# ── Utilities ────────────────────────────────────────────────
+httpx==0.28.1
+pillow==11.2.1
+
+# ── Testing ──────────────────────────────────────────────────
+pytest==8.3.5
+pytest-asyncio==0.25.3

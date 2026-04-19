@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-002",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Fake MCMC Enforcement Calls Demanding Payment",
+  "category": "impersonation",
+  "date_published": "2025-10-20",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) warns the public about scammers impersonating MCMC enforcement officers via phone calls. Scammers claim that the victim's phone number or internet account is linked to illegal activities such as spreading fake news, online gambling, or sending spam messages, and demand immediate payment of a 'compound fine' to avoid prosecution. The calls typically follow this pattern: (1) Automated voice message claiming to be from MCMC stating the victim's telecommunications line will be terminated, (2) Transfer to a 'live officer' who confirms the alleged violation and threatens legal action, (3) The 'officer' provides a case reference number and demands payment via bank transfer or prepaid reload card, (4) In sophisticated variants, the call is transferred to a fake 'PDRM investigating officer' who escalates the threat by mentioning money laundering charges. MCMC categorically states: (a) MCMC does NOT issue compound fines via phone calls, (b) MCMC enforcement officers will NEVER demand payment over the phone, (c) MCMC will NEVER threaten to terminate telecommunications services as punishment, (d) All legitimate MCMC enforcement actions are conducted through official written correspondence. Over 8,400 reports of MCMC impersonation calls were received in 2025. Report such calls to MCMC at 1-800-188-030 or file a complaint at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["MCMC enforcement call", "compound fine demand", "telecommunications line termination threat", "automated MCMC message", "prepaid reload payment", "fake case reference number"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

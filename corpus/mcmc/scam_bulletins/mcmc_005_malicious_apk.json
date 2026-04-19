@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-005",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Malicious APK Files Distributed via SMS and WhatsApp",
+  "category": "malware",
+  "date_published": "2025-08-15",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) issues a critical alert about the distribution of malicious Android APK files via SMS and WhatsApp messages in Malaysia. Cybercriminals send messages containing links to download APK files disguised as legitimate applications such as bank security updates, Pos Malaysia tracking apps, LHDN tax filing apps, or wedding invitation cards. Once installed, these malicious APKs: (1) Request extensive permissions including SMS access, allowing the malware to intercept OTP and TAC messages, (2) Overlay fake login screens on top of legitimate banking apps to steal credentials, (3) Access the device's contact list to propagate the malware to other victims, (4) Enable remote access allowing criminals to control the device and perform banking transactions, (5) Some variants install keyloggers that record all keystrokes including passwords. Distribution vectors identified by MCMC: links disguised as 'Jemputan Kahwin' (wedding invitations), 'Pos Malaysia parcel tracking', 'LHDN e-Filing update', 'MySejahtera health check', and 'Touch n Go eWallet update'. MCMC has coordinated with CyberSecurity Malaysia (MyCERT) to issue takedown requests for over 6,000 malware distribution URLs. Reported losses linked to APK malware exceeded RM 230 million in 2025. NEVER install apps from unknown sources. Only download apps from Google Play Store or Apple App Store. Report malicious links to MCMC at https://aduan.skmm.gov.my or MyCERT at https://www.mycert.org.my.",
+  "threat_indicators": ["APK download link via SMS", "wedding invitation APK", "parcel tracking malware", "fake banking app update", "SMS permission request", "unknown source app installation"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

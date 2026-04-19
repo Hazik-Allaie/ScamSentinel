@@ -1,0 +1,1 @@
+# ScamSentinel database package

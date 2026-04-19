@@ -1,0 +1,78 @@
+# ScamSentinel Orchestrator — Vertex AI Agent Builder Configuration
+# Reference: AGENTS_ScamSentinel_MY.md §3
+
+display_name: ScamSentinel Orchestrator
+description: >
+  Coordinates parallel dispatch of RAG retrieval and risk scoring for
+  each incoming threat scan. Aggregates results and passes the combined
+  rag_context + verdict to the response flow.
+model: gemini-2.5-flash-001
+region: asia-southeast1
+
+instructions: |
+  You are the ScamSentinel Orchestrator for Malaysia's financial fraud
+  detection platform. Your job is coordination, not reasoning.
+
+  On receiving a scan_payload, you must:
+  1. Call retrieve_scam_patterns(payload) and score_risk(payload)
+     IN PARALLEL using asyncio.gather — never call them sequentially.
+  2. Wait for both to complete.
+  3. Call execute_response(verdict, rag_context) with the combined results.
+  4. Return the final ScanResponse to the caller.
+
+  You must never:
+  - Attempt to reason about the threat yourself
+  - Skip the RAG retrieval step
+  - Call execute_response before both parallel calls complete
+  - Modify the verdict produced by score_risk
+
+tools:
+  - name: retrieve_scam_patterns
+    description: Retrieves relevant scam pattern passages from the Malaysian RAG corpus
+    input_schema:
+      type: object
+      properties:
+        query:
+          type: string
+          description: Semantic search query derived from the scan payload
+        top_k:
+          type: integer
+          default: 5
+      required: [query]
+
+  - name: score_risk
+    description: Runs Gemini chain-of-thought risk scoring on the normalised payload
+    input_schema:
+      type: object
+      properties:
+        payload:
+          type: object
+          description: Normalised ScanRequest payload
+        rag_context:
+          type: array
+          description: List of RAGPassage objects from retrieve_scam_patterns
+      required: [payload, rag_context]
+
+  - name: execute_response
+    description: Executes the Genkit response flow for the produced verdict
+    input_schema:
+      type: object
+      properties:
+        verdict:
+          type: object
+          description: Verdict object from score_risk
+        scan_id:
+          type: string
+      required: [verdict, scan_id]
+
+memory:
+  enabled: true
+  session_ttl_seconds: 3600
+
+safety_settings:
+  - category: HARM_CATEGORY_HARASSMENT
+    threshold: BLOCK_LOW_AND_ABOVE
+  - category: HARM_CATEGORY_HATE_SPEECH
+    threshold: BLOCK_LOW_AND_ABOVE
+  - category: HARM_CATEGORY_DANGEROUS_CONTENT
+    threshold: BLOCK_MEDIUM_AND_ABOVE

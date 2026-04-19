@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-009",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Fake Parcel Delivery Scams Impersonating Pos Malaysia, J&T, and DHL",
+  "category": "parcel_scam",
+  "date_published": "2025-05-30",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) warns the public about fake parcel delivery scams impersonating major courier services in Malaysia, including Pos Malaysia, J&T Express, DHL, FedEx, and Ninja Van. These scams exploit the high volume of e-commerce deliveries in Malaysia (over 4 million parcels daily) to target victims who are expecting packages. Scam variants identified by MCMC: (1) SMS or email claiming a parcel cannot be delivered due to 'incomplete address' or 'customs charges', with a link to a fake courier website requesting personal details and payment, (2) WhatsApp messages with a fake delivery photo and a link to install a 'tracking app' that is actually malware (APK), (3) Phone calls from scammers posing as customs officers claiming the victim's parcel contains contraband (drugs, counterfeit goods) and demanding payment to avoid prosecution, (4) Fake Pos Malaysia websites requesting credit card details to pay a 'redelivery fee' of RM 2-5 — the small amount makes victims less suspicious, but card details are subsequently used for larger fraudulent transactions, (5) 'Cash on delivery' scams where victims receive packages they never ordered and are pressured into paying the courier. MCMC blocked over 7,500 parcel scam URLs in 2025. Check delivery status only on official courier apps or websites. Pos Malaysia's official domain is www.pos.com.my. Report parcel scams to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["parcel delivery SMS link", "customs charges for parcel", "fake Pos Malaysia website", "tracking app APK download", "redelivery fee request", "cash on delivery scam"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-006",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Romance Scams on Dating Apps and Social Media",
+  "category": "love_scam",
+  "date_published": "2025-07-25",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) warns the public about the continued prevalence of romance scams (love scams) targeting Malaysians through dating applications and social media platforms. Scammers create attractive fake profiles on platforms such as Tinder, Bumble, Facebook, and Instagram, then build emotional relationships with victims over weeks or months before requesting money. Common patterns identified by MCMC and PDRM CCID: (1) Scammer uses stolen photos of attractive individuals (often military personnel, doctors, engineers, or business executives), (2) Communication quickly moves from the dating app to WhatsApp or Telegram for more personal interaction, (3) After establishing emotional dependency, the scammer introduces a financial crisis — medical emergency, business investment opportunity, customs fees for sending a gift, or travel costs to visit Malaysia, (4) Requests escalate from small amounts (RM 500) to large sums (RM 50,000+), (5) 'Pig butchering' variants combine romance with fake cryptocurrency investment platforms, (6) Victims are often isolated from friends and family by the scammer. In 2025, PDRM reported 2,100 love scam cases in Malaysia with losses exceeding RM 280 million, making it the second-highest loss category after investment scams. Victims span all demographics but women aged 30-55 are disproportionately targeted. MCMC has blocked 3,200 social media accounts linked to romance scam syndicates. Never send money to someone you have only met online. Report to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["dating app contact", "quick move to WhatsApp", "foreign military profile", "medical emergency request", "customs fee for gift", "pig butchering", "cryptocurrency investment from partner"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

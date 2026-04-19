@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-007",
+  "source": "bnm",
+  "title": "BNM Advisory: Impersonation of BNM Officers and Fake Official Letters",
+  "category": "impersonation",
+  "date_published": "2025-08-22",
+  "content": "Bank Negara Malaysia (BNM) has received increasing reports of scammers impersonating BNM officers to defraud the public. Scammers contact victims via phone calls, WhatsApp messages, or fake official letters bearing BNM's logo and letterhead. Common tactics include: (1) Claiming the victim's bank account has been flagged for money laundering and must be 'verified' by transferring funds to a 'BNM holding account', (2) Sending fake letters demanding payment of a 'processing fee' or 'tax clearance' to release frozen funds, (3) Posing as BNM Debt Management officers offering to consolidate or write off existing loans for an upfront fee, (4) Creating fake BNM websites or social media accounts to collect personal banking credentials. BNM categorically states: (a) BNM will NEVER request money transfers from the public, (b) BNM does NOT offer debt consolidation or loan write-off services, (c) BNM officers will NEVER request banking passwords, TAC, or OTP via phone or message, (d) All legitimate BNM communications use the official domain @bnm.gov.my. In 2025, over 1,200 cases of BNM impersonation were reported, with losses exceeding RM 45 million. Verify any suspicious communication by calling BNM LINK at 1-300-88-5465.",
+  "threat_indicators": ["BNM officer impersonation", "fake BNM letter", "money laundering claim", "BNM holding account", "processing fee demand", "debt consolidation scam"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

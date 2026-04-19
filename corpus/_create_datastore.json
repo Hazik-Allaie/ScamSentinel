@@ -1,0 +1,6 @@
+{
+  "displayName": "ScamSentinel Corpus",
+  "industryVertical": "GENERIC",
+  "contentConfig": "CONTENT_REQUIRED",
+  "solutionTypes": ["SOLUTION_TYPE_SEARCH"]
+}

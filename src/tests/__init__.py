@@ -1,0 +1,1 @@
+# ScamSentinel tests package

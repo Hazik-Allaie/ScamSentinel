@@ -1,0 +1,1 @@
+# ScamSentinel utils package

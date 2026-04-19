@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-002",
+  "source": "pdrm",
+  "title": "PDRM Alert: Online Purchase Scam via Social Media",
+  "category": "ecommerce_scam",
+  "date_published": "2025-09-22",
+  "content": "PDRM CCID has observed a significant rise in online purchase scams conducted through social media platforms including Facebook Marketplace, Instagram, Shopee, and Carousell. Scammers create fake seller profiles offering branded goods, electronics, and concert tickets at prices significantly below market value. Victims are asked to make payment via bank transfer to personal accounts. After payment, the seller becomes unreachable or delivers counterfeit goods. Key patterns identified: (1) Product prices 40-70% below retail, (2) Seller insists on direct bank transfer rather than platform payment, (3) Newly created accounts with few reviews, (4) Seller provides fake tracking numbers, (5) Communication shifts to WhatsApp quickly. In 2025, e-commerce scams accounted for RM 120 million in lost funds across 8,900 reported cases. PDRM advises: always use platform payment protection, never transfer to personal bank accounts, verify seller reputation, and report suspicious sellers to the platform and PDRM.",
+  "threat_indicators": ["social media seller", "price too good to be true", "direct bank transfer", "fake tracking number", "new account", "WhatsApp"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-009",
+  "source": "bnm",
+  "title": "BNM Advisory: E-Wallet and Mobile Payment Fraud Schemes",
+  "category": "payment_fraud",
+  "date_published": "2025-06-15",
+  "content": "Bank Negara Malaysia (BNM) issues an advisory on the rising number of fraud cases involving e-wallet and mobile payment platforms in Malaysia. With over 60 million e-wallet accounts registered in Malaysia and transaction volume exceeding RM 12 billion (Q1-Q2 2025), criminals are increasingly targeting these platforms. Common e-wallet fraud schemes: (1) Fake cash-back or reward promotions — victims are lured by social media ads promising RM 500 cashback for 'upgrading' their e-wallet; they are directed to phishing pages that capture login credentials, (2) Unauthorised account linking — fraudsters obtain victim's phone number and OTP via social engineering, then link the victim's bank account to a fraudster-controlled e-wallet, (3) QR code manipulation — scammers replace legitimate merchant QR codes at food stalls and small businesses with their own QR codes; payment goes to the fraudster's account, (4) Fake e-wallet customer service — scammers create fake hotline numbers that appear in Google searches; victims calling for support are tricked into sharing account details, (5) P2P transfer scams — fraudsters claim to have accidentally sent money to the victim and demand a refund via a different payment method. Licensed e-wallet issuers under BNM include Touch 'n Go eWallet, GrabPay, Boost, MAE, ShopeePay, and BigPay. Always verify operator licences on BNM's list of e-money issuers. Report fraud to BNM LINK at 1-300-88-5465.",
+  "threat_indicators": ["fake cashback promotion", "e-wallet credential phishing", "QR code replacement", "fake customer service hotline", "unauthorised account linking", "P2P refund scam"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

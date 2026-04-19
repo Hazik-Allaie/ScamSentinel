@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-008",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Illegal Online Gambling and Betting Platforms",
+  "category": "online_gambling",
+  "date_published": "2025-06-18",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) warns the public about the proliferation of illegal online gambling and betting platforms targeting Malaysians. These platforms operate without licences from the Ministry of Finance and pose significant financial and legal risks to users. MCMC enforcement findings: (1) Over 12,000 illegal gambling websites and mobile apps were blocked in 2025, a 35% increase from 2024, (2) Many platforms use Malaysian-focused marketing including BM-language interfaces, ringgit currency, and local sports betting (Malaysian football, badminton), (3) Players deposit funds via personal bank transfers, e-wallet, or cryptocurrency to unregulated accounts, (4) Platforms manipulate odds and game outcomes, making consistent withdrawal impossible, (5) Players' personal and banking information collected during registration is sold to fraud syndicates, (6) Some platforms serve as laundering vehicles for scam proceeds. Legal consequences: Under Section 4 of the Common Gaming Houses Act 1953, both operators and players of illegal gambling operations face fines up to RM 50,000 and imprisonment up to 3 years. MCMC actively monitors and blocks gambling domains under Section 263(2) of the Communications and Multimedia Act 1998. Losses linked to illegal online gambling in Malaysia exceeded RM 1.2 billion in 2025. Report illegal gambling sites to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["unlicensed gambling website", "online betting app", "sports betting BM interface", "cryptocurrency gambling deposit", "guaranteed winnings promotion", "illegal casino platform"],
+  "risk_level": "MEDIUM",
+  "region": "nationwide",
+  "language": "en"
+}

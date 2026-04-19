@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-007",
+  "source": "pdrm",
+  "title": "PDRM Warning: Loan Scam Targeting Blacklisted Borrowers",
+  "category": "loan_scam",
+  "date_published": "2025-06-28",
+  "content": "PDRM CCID warns the public about illegal loan scams targeting individuals who have been blacklisted by CTOS or CCRIS. Scammers advertise fast loan approval on Facebook and Telegram with messages like 'Pinjaman Peribadi Segera — Tiada Semakan CTOS' (Instant Personal Loan — No CTOS Check) or 'Loan Approved in 30 Minutes'. Victims are asked to pay upfront 'processing fees', 'stamp duty', 'insurance fees', or 'lawyer fees' before the loan is disbursed. After multiple payments, the loan is never released. Key warning signs: (1) Unsolicited loan offers via social media or SMS, (2) No CTOS/CCRIS check required, (3) Upfront fees demanded before disbursement, (4) Loan officer communicates only via WhatsApp, (5) No physical office address, (6) Company not registered with BNM or Kementerian Perumahan. In 2025, loan scam reports totalled 3,400 cases with losses of RM 45 million. Citizens are reminded: legitimate licensed moneylenders will NEVER ask for upfront fees and are listed on BNM's Financial Consumer Alert.",
+  "threat_indicators": ["fast loan approval", "no CTOS check", "upfront processing fee", "stamp duty", "WhatsApp loan officer", "pinjaman segera"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

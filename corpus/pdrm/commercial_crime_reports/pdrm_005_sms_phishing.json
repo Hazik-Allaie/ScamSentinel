@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-005",
+  "source": "pdrm",
+  "title": "PDRM Alert: SMS Phishing (Smishing) Targeting Bank Customers",
+  "category": "phishing",
+  "date_published": "2025-07-18",
+  "content": "PDRM CCID warns the public about a surge in SMS phishing (smishing) attacks targeting Malaysian bank customers. Victims receive SMS messages appearing to come from Maybank, CIMB, Public Bank, or Hong Leong Bank claiming suspicious activity on their account, a blocked card, or an unclaimed TAC. The SMS contains a shortened URL (bit.ly, tinyurl, or similar) that redirects to a fake banking login page designed to steal online banking credentials. Once credentials are captured, scammers perform unauthorised transfers. Common SMS text patterns: 'Maybank: Your account has been suspended. Verify at [link]', 'CIMB: Unauthorized transaction detected RM3,000. Click to secure [link]', 'Your TAC is 123456 for transfer RM5,000 to [name]. If not you, click [link]'. In the first half of 2025, smishing attacks resulted in RM 95 million in losses across 6,300 cases. Banks will NEVER send links via SMS asking you to log in. If you receive such messages, do not click the link — contact your bank directly via the official app or hotline.",
+  "threat_indicators": ["SMS from bank", "account suspended", "click link", "shortened URL", "fake login page", "TAC code", "smishing"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

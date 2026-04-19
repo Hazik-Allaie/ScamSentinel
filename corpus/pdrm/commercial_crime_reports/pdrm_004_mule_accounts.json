@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-004",
+  "source": "pdrm",
+  "title": "PDRM Intelligence: Mule Account Networks in Malaysia",
+  "category": "mule_account",
+  "date_published": "2025-10-05",
+  "content": "PDRM CCID has identified extensive networks of mule accounts used to facilitate scam fund laundering across Malaysia. Mule accounts are personal bank accounts recruited — often through job scam advertisements — to receive and quickly transfer scam proceeds. The account holders (money mules) are typically students, unemployed youth, or foreign workers promised commissions of 5-10% per transaction. Key mule recruitment patterns: (1) Job advertisements on Telegram and Facebook offering 'easy money' or 'part-time income' from home, (2) Requirements to provide bank account details and ATM card, (3) Instructions to transfer received funds to multiple accounts within hours, (4) Use of multiple banks including Maybank, CIMB, Public Bank, RHB, and Bank Islam. PDRM has identified over 12,000 suspected mule accounts in 2025. Under Section 424 of the Penal Code, money mule activities carry imprisonment up to 5 years and whipping. Citizens are warned: never lend your bank account to anyone. If you suspect a recipient account is a mule, do NOT proceed with the transfer and report to ScamSentinel or NSRC hotline 997.",
+  "threat_indicators": ["mule account", "easy money job", "Telegram job ad", "transfer funds", "bank account rental", "commission payment"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

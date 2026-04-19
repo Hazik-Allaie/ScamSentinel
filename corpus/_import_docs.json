@@ -1,0 +1,11 @@
+{
+  "gcsSource": {
+    "inputUris": [
+      "gs://scamsentinel-corpus/pdrm/commercial_crime_reports/*.json",
+      "gs://scamsentinel-corpus/bnm/fraud_advisories/*.json",
+      "gs://scamsentinel-corpus/mcmc/scam_bulletins/*.json"
+    ],
+    "dataSchema": "content"
+  },
+  "reconciliationMode": "FULL"
+}

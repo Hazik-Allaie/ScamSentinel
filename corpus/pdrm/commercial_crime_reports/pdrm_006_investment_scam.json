@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-006",
+  "source": "pdrm",
+  "title": "PDRM Report: Investment Scam Syndicates Using Social Media Influencers",
+  "category": "investment_scam",
+  "date_published": "2025-12-01",
+  "content": "PDRM CCID has busted multiple investment scam syndicates that use social media influencers and fake testimonials to lure Malaysian investors. These syndicates operate unlicensed forex, cryptocurrency, and gold trading schemes, promising guaranteed returns of 30-100% per month. They recruit influencers on Instagram and TikTok to promote the schemes, showing luxury lifestyles funded by scam proceeds. Common patterns: (1) Guaranteed high returns with zero risk claims, (2) Aggressive recruitment via WhatsApp groups with screenshots of 'profits', (3) Initial small investments yield returns to build trust, (4) Victims encouraged to recruit friends and family (pyramid structure), (5) Platform suddenly becomes inaccessible after collecting large investments, (6) Operations registered in labuan or offshore jurisdictions. In 2025, investment scam losses in Malaysia totalled RM 510 million — the highest category. PDRM advises: check the Securities Commission's Investor Alert List at www.sc.com.my before investing. No legitimate investment guarantees returns.",
+  "threat_indicators": ["guaranteed returns", "forex trading", "cryptocurrency investment", "WhatsApp group", "influencer promotion", "pyramid scheme", "unlicensed platform"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

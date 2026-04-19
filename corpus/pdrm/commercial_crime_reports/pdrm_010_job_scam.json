@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-010",
+  "source": "pdrm",
+  "title": "PDRM Report: Job Scam via Telegram Task-Based Fraud",
+  "category": "ecommerce_scam",
+  "date_published": "2025-03-12",
+  "content": "PDRM CCID has identified a major job scam operation using Telegram where victims are recruited for 'part-time work from home' involving completing tasks on fake e-commerce platforms. Victims are told they can earn RM 500-2000 daily by boosting product ratings or completing purchase orders. Initial tasks yield small payments (RM 30-50) to build trust. Victims are then required to deposit increasing amounts (RM 500, RM 2000, RM 5000) as 'advance payment' for higher-value task bundles. The platform shows rising balances, but withdrawals are blocked with excuses like 'minimum threshold not met' or 'tax payment required'. Common recruitment messages include: 'Part-time job from home. Earn RM 200-1000 daily. WhatsApp [number]', 'Looking for online workers. No experience needed. RM 50 per task.' In 2025, task-based job scams defrauded over 7,200 Malaysians with total losses of RM 165 million. PDRM warns: no legitimate job requires you to deposit your own money first.",
+  "threat_indicators": ["Telegram job offer", "task-based work", "advance payment", "work from home", "boosting ratings", "deposit required", "withdrawal blocked"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-002",
+  "source": "bnm",
+  "title": "BNM Alert: Fraudulent Online Banking Transactions and Account Takeover",
+  "category": "phishing",
+  "date_published": "2025-09-15",
+  "content": "Bank Negara Malaysia (BNM) issues an alert regarding the rise of fraudulent online banking transactions caused by phishing attacks and account takeover. BNM has directed all financial institutions under its supervision to strengthen authentication measures including migration from SMS TAC to Secure2u push authentication. Key fraud methods identified: (1) Phishing websites mimicking Malaysian bank login pages — domains often use bank names with slight misspellings (e.g., maybank2u-secure.com, cimbclicks-verify.my), (2) SIM swap attacks where scammers replace the victim's SIM card to intercept TAC codes, (3) Social engineering calls where scammers pose as bank officers requesting TAC codes, (4) Malware in fake banking APK files intercepting SMS messages. BNM's five-point security measures for consumers: (a) Never share TAC/OTP with anyone including bank staff, (b) Lock accounts immediately via bank app if suspicious activity detected, (c) Enable biometric authentication where available, (d) Set transaction limits on online banking, (e) Register for real-time transaction notifications. Report unauthorised transactions to your bank immediately and BNM LINK at 1-300-88-5465.",
+  "threat_indicators": ["fake bank website", "domain misspelling", "SIM swap", "TAC sharing request", "bank officer call", "account takeover"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

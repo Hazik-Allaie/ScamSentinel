@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-003",
+  "source": "bnm",
+  "title": "BNM Advisory: DuitNow QR Payment Scams",
+  "category": "phishing",
+  "date_published": "2025-08-22",
+  "content": "Bank Negara Malaysia (BNM) advises the public to exercise caution when scanning DuitNow QR codes for payments. Scammers have been replacing legitimate merchant QR codes with fraudulent ones, or creating fake QR codes that redirect payments to scam accounts. Reported DuitNow QR scam methods: (1) QR code sticker swap — scammers paste their QR code over legitimate merchant QR codes at hawker stalls, parking meters, and retail shops, (2) Fake DuitNow QR codes in online advertisements and social media posts directing to scam recipient accounts, (3) Modified QR codes with inflated amounts embedded in the payment payload, (4) QR codes in phishing emails linking to fake payment gateways. BNM safety guidelines for DuitNow QR: (a) Always verify the recipient name shown on your banking app before confirming payment, (b) Check that the merchant name matches the business you are paying, (c) Be suspicious of QR codes that appear to be stickers placed over existing codes, (d) Never scan QR codes from untrusted sources or unsolicited messages, (e) Report suspicious QR codes to your bank and BNM. Merchants are advised to regularly check their displayed QR codes for tampering.",
+  "threat_indicators": ["DuitNow QR", "QR code swap", "fake QR sticker", "wrong recipient name", "modified payment amount", "QR phishing"],
+  "risk_level": "MEDIUM",
+  "region": "nationwide",
+  "language": "en"
+}

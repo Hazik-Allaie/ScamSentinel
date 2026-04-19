@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-005",
+  "source": "bnm",
+  "title": "BNM Advisory: Cryptocurrency and Digital Asset Fraud in Malaysia",
+  "category": "investment_scam",
+  "date_published": "2025-11-18",
+  "content": "Bank Negara Malaysia (BNM) and the Securities Commission Malaysia (SC) jointly warn the public about the rise of cryptocurrency and digital asset fraud. Only digital asset exchanges registered with the SC are legal in Malaysia — currently Luno, Tokenize, and MX Global. Any other platform soliciting cryptocurrency investments from Malaysians is operating illegally. Common cryptocurrency scam patterns: (1) Unregistered crypto platforms promising guaranteed daily returns of 2-5%, (2) Celebrity-endorsed crypto schemes using deepfake videos of Malaysian public figures, (3) Telegram and Discord groups offering 'crypto signals' requiring subscription fees and deposits, (4) Romance scammers directing victims to invest in crypto trading platforms that show fake profits, (5) Fake initial coin offerings (ICOs) or token launches with worthless tokens, (6) Crypto mining scams requiring purchase of 'mining packages'. BNM reminds the public: cryptocurrency is NOT legal tender in Malaysia. Losses from crypto investments in unregistered platforms are not protected by law. Always verify platform registration at www.sc.com.my before investing. Report suspected crypto scams to SC at aduan@seccom.com.my.",
+  "threat_indicators": ["unregistered crypto platform", "guaranteed crypto returns", "crypto signals group", "mining package", "deepfake endorsement", "fake ICO"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

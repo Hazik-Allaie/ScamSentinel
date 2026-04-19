@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-008",
+  "source": "pdrm",
+  "title": "PDRM Intelligence: Parcel Delivery Scam via SMS and Phone",
+  "category": "impersonation",
+  "date_published": "2025-05-14",
+  "content": "PDRM CCID reports a widespread parcel delivery scam where victims receive SMS or calls claiming a parcel is held at customs or a delivery depot. The message instructs victims to click a link or call a number to arrange redelivery. The link leads to a phishing site mimicking Pos Malaysia, DHL, or J&T Express, asking for personal details and payment of a 'customs clearance fee' or 'redelivery charge'. In phone call variants, the scammer transfers the victim to a fake 'customs officer' who threatens legal action for importing prohibited items. The victim is then advised to transfer money to a 'security account'. Common SMS texts include: 'Pos Malaysia: Your parcel MY123456 is held at customs. Pay RM 15.90 to release: [link]', 'J&T Express: We attempted delivery but failed. Reschedule at [link]'. In 2025, parcel scams affected over 5,600 victims with losses of RM 32 million. Pos Malaysia confirms they never request payment via SMS links. Always verify directly through the courier's official app.",
+  "threat_indicators": ["parcel held at customs", "delivery failed SMS", "customs clearance fee", "Pos Malaysia", "J&T Express", "redelivery link"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

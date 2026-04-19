@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-003",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: WhatsApp and Telegram Job Scam Syndicates",
+  "category": "job_scam",
+  "date_published": "2025-09-28",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) issues an urgent alert about organised job scam syndicates operating through WhatsApp and Telegram targeting Malaysians. These syndicates recruit victims under the guise of legitimate work-from-home opportunities, typically involving tasks such as 'liking' social media posts, 'reviewing' products on e-commerce platforms, or 'boosting' app ratings. The scam operates in stages: (1) Initial contact via unsolicited WhatsApp message from an international number (+62, +66, +91 prefixes) offering high daily pay (RM 300-500) for simple online tasks, (2) Victims are added to a Telegram group where other 'workers' share payment screenshots to build trust, (3) Victims complete small tasks and receive real payments (RM 20-50) to establish credibility, (4) Victims are told to 'upgrade' to higher-paying tasks that require a 'deposit' or 'prepaid amount', (5) Deposits increase progressively (RM 500, RM 1,000, RM 5,000) with promised returns, (6) When the victim tries to withdraw, they are told additional 'tax', 'service charges', or 'deposits' are needed, (7) Eventually the Telegram group is deleted and all contacts disappear. MCMC has blocked over 15,000 phone numbers and coordinated with international telcos to disrupt these networks. Total reported losses exceed RM 520 million in 2025. Never respond to unsolicited job offers via messaging apps. Report to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["WhatsApp job offer", "Telegram work group", "like and earn scheme", "international phone number job offer", "deposit for higher tasks", "work from home RM 300 daily"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

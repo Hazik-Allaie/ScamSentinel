@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-007",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Fake Government Aid and Subsidy Application Scams",
+  "category": "government_impersonation",
+  "date_published": "2025-07-02",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) alerts the public to scams exploiting government aid and subsidy programmes to defraud Malaysians. Scammers create fake websites, SMS messages, and social media posts mimicking legitimate government initiatives such as Bantuan Sara Hidup (BSH), Sumbangan Tunai Rahmah (STR), Bantuan Prihatin Rakyat (BPR), and the diesel/RON95 fuel subsidy. Fraud methods identified: (1) SMS messages claiming 'Permohonan STR anda telah diluluskan. Sila kemaskini akaun bank anda melalui pautan ini' directing victims to phishing sites, (2) Fake MyGovernment or JKM (Jabatan Kebajikan Masyarakat) websites collecting IC numbers, bank account details, and TAC/OTP codes, (3) Facebook and TikTok advertisements promoting 'Bantuan Khas RM 1,000' with application links to fraudulent forms, (4) WhatsApp messages with fake PDF 'approval letters' from the Prime Minister's Office, (5) Fraudsters posing as government officers calling to 'verify' bank details for subsidy disbursement. MCMC has taken down over 5,600 fraudulent URLs and 1,800 social media posts related to fake government aid schemes in 2025. All legitimate government aid applications are processed through official portals only (e.g., bfrr.hasil.gov.my for STR). The government will NEVER request bank passwords or OTPs for aid disbursement. Report fake government aid schemes to MCMC at https://aduan.skmm.gov.my.",
+  "threat_indicators": ["fake government aid SMS", "BSH approval phishing", "STR application scam", "fake JKM website", "government subsidy link", "bantuan khas promotion"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

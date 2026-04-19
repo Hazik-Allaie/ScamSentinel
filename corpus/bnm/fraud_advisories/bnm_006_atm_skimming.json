@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-006",
+  "source": "bnm",
+  "title": "BNM Advisory: ATM Skimming and Card Cloning Fraud",
+  "category": "card_fraud",
+  "date_published": "2025-09-18",
+  "content": "Bank Negara Malaysia (BNM) alerts the public to a resurgence of ATM skimming incidents across Malaysia. Criminals attach concealed devices to ATM card slots to capture card data and miniature cameras or overlay keypads to record PINs. Cloned cards are then used for unauthorised withdrawals. Between January and August 2025, BNM-regulated institutions reported a 22% increase in skimming-related fraud losses, totalling RM 18.7 million. High-risk locations include standalone ATMs at petrol stations, convenience stores, and shopping mall car parks. Protective measures: (1) Inspect the ATM card slot and keypad area for loose or unusual attachments before inserting your card, (2) Cover the keypad with your hand when entering your PIN, (3) Use ATMs inside bank branches whenever possible, (4) Enable real-time SMS/push transaction alerts from your bank, (5) Report any suspicious ATM attachments to the bank and PDRM immediately, (6) Monitor your account statements weekly for unauthorised transactions. If you suspect your card has been compromised, block the card immediately through your bank's hotline and file a police report. BNM requires all banks to reimburse verified skimming losses within 14 business days under the Financial Consumer Protection Framework.",
+  "threat_indicators": ["ATM skimming device", "card cloning", "suspicious ATM attachment", "unauthorised withdrawal", "overlay keypad", "standalone ATM"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

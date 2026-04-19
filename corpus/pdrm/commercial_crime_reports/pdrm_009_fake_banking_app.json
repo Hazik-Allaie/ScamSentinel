@@ -1,0 +1,12 @@
+{
+  "document_id": "pdrm-009",
+  "source": "pdrm",
+  "title": "PDRM Alert: TAC/OTP Theft via Fake Banking Apps",
+  "category": "phishing",
+  "date_published": "2025-04-20",
+  "content": "PDRM CCID has detected a sophisticated phishing attack involving fake Malaysian banking applications distributed through Android APK files shared via WhatsApp and Telegram. These fake apps mimic the user interface of Maybank2u, CIMBClicks, and other banking apps. When installed, they request SMS permissions and overlay permissions, allowing scammers to intercept TAC (Transaction Authorisation Code) and OTP messages. The attack flow: (1) Victim receives a message with a link to 'update' their banking app, (2) Victim downloads and installs an APK file outside the Google Play Store, (3) Fake app captures login credentials, (4) Malware intercepts incoming TAC SMS, (5) Scammers use captured credentials and TAC to drain the account. In 2025, APK-based banking fraud resulted in RM 78 million in losses across 2,800 cases. PDRM strongly advises: NEVER install banking apps from links — only download from the official Google Play Store or Apple App Store. Enable two-factor authentication using push notifications instead of SMS TAC where available.",
+  "threat_indicators": ["fake banking app", "APK file download", "SMS permission request", "TAC interception", "OTP theft", "WhatsApp link to app"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

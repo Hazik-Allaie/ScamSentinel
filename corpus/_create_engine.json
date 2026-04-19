@@ -1,0 +1,9 @@
+{
+  "displayName": "ScamSentinel Search",
+  "dataStoreIds": ["scamsentinel-corpus"],
+  "solutionType": "SOLUTION_TYPE_SEARCH",
+  "searchEngineConfig": {
+    "searchTier": "SEARCH_TIER_STANDARD",
+    "searchAddOns": ["SEARCH_ADD_ON_LLM"]
+  }
+}

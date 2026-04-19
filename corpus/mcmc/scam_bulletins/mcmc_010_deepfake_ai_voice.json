@@ -1,0 +1,12 @@
+{
+  "document_id": "mcmc-010",
+  "source": "mcmc",
+  "title": "MCMC Scam Alert: Deepfake Video Call Scams and AI-Generated Voice Fraud",
+  "category": "deepfake_fraud",
+  "date_published": "2025-05-15",
+  "content": "The Malaysian Communications and Multimedia Commission (MCMC) issues an emerging threat advisory on deepfake video call scams and AI-generated voice fraud targeting Malaysians. Advances in artificial intelligence have enabled scammers to create convincing real-time deepfake videos and voice clones to impersonate trusted individuals. Threat scenarios observed in Malaysia: (1) Deepfake video calls on WhatsApp or Zoom impersonating company executives (CEO fraud) — the scammer uses a deepfake video of the CEO to instruct a finance officer to make an urgent bank transfer, (2) AI-cloned voice calls impersonating family members — the scammer uses a voice clone (created from as little as 3 seconds of audio from social media) to call parents claiming to be their child in an emergency needing immediate funds, (3) Deepfake celebrity endorsements — AI-generated videos of Malaysian celebrities (e.g., politicians, actors, athletes) promoting fake investment schemes on social media, (4) AI-generated voice messages on WhatsApp impersonating friends to request emergency loans. Protective measures: (1) Establish a family code word for verifying emergency calls, (2) Call back on the person's known number if you receive an unusual request, (3) Be sceptical of video calls with unusual facial movements, lip sync issues, or unnatural blinking, (4) Limit personal videos and voice messages on public social media profiles. MCMC is working with CyberSecurity Malaysia to develop deepfake detection capabilities. Report deepfake fraud to MCMC at https://aduan.skmm.gov.my or PDRM at 999.",
+  "threat_indicators": ["deepfake video call", "AI voice clone", "CEO urgent transfer request", "family emergency voice call", "celebrity investment endorsement", "unusual facial movements on video"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

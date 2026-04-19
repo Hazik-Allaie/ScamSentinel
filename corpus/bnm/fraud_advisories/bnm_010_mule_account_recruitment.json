@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-010",
+  "source": "bnm",
+  "title": "BNM Advisory: Mule Account Recruitment and Money Laundering via Personal Bank Accounts",
+  "category": "mule_account",
+  "date_published": "2025-05-28",
+  "content": "Bank Negara Malaysia (BNM) warns the public about the criminal offence of allowing personal bank accounts to be used as mule accounts for money laundering. Mule account recruitment has become a significant problem in Malaysia, with syndicates targeting students, gig workers, and the unemployed with promises of easy money. Common recruitment methods: (1) Social media job advertisements offering RM 500-2000 for simply 'receiving and forwarding' money through personal accounts, (2) Telegram and WhatsApp groups advertising 'part-time income' that involves providing bank account details and ATM cards, (3) Fake 'commission agent' roles where recruits are told funds are legitimate business transactions, (4) Crypto-related schemes where mule accounts are used to convert stolen funds to cryptocurrency. Under the Anti-Money Laundering, Anti-Terrorism Financing and Proceeds of Unlawful Activities Act 2001 (AMLA), anyone who allows their bank account to be used for money laundering faces imprisonment of up to 15 years, a fine of up to RM 5 million, or both. In 2025, BNM and PDRM jointly identified over 90,000 mule accounts across Malaysian banks, freezing RM 620 million in suspected proceeds. Banks are required to report suspicious transactions to BNM's Financial Intelligence Unit. If you have been approached to lend your bank account, report it to PDRM or BNM LINK immediately.",
+  "threat_indicators": ["mule account recruitment", "receive and forward money", "lend bank account", "part-time income job ad", "ATM card rental", "easy money social media ad"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}

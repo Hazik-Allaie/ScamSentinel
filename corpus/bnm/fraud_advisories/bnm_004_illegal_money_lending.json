@@ -1,0 +1,12 @@
+{
+  "document_id": "bnm-004",
+  "source": "bnm",
+  "title": "BNM Warning: Illegal Money Lending and Ah Long Scams",
+  "category": "loan_scam",
+  "date_published": "2025-07-05",
+  "content": "Bank Negara Malaysia (BNM) issues a strong warning against borrowing from unlicensed moneylenders (Ah Long / along) and illegal loan apps. These illegal lenders operate through social media, Telegram groups, and mobile applications not registered with BNM. Victims face extreme interest rates (often 100-300% annualised), harassment, threats, and data privacy violations. Key warning signs of illegal lending: (1) Loan advertised via WhatsApp, Telegram, or SMS spam, (2) No physical office or BNM/KPKT licence number provided, (3) Borrower asked to provide IC photo, selfie holding IC, and access to phone contacts, (4) Loan apps request extensive phone permissions (contacts, photos, SMS), (5) Interest rates not clearly disclosed before signing, (6) Harassment of borrower's contacts if payment is late. BNM maintains a list of licensed moneylenders at https://www.kpkt.gov.my. Only borrow from licensed financial institutions. If you are a victim of Ah Long harassment, report to PDRM immediately. BNM has worked with Google and Apple to remove over 150 illegal loan apps from Malaysian app stores in 2025.",
+  "threat_indicators": ["Ah Long", "illegal moneylender", "loan app", "IC photo required", "phone contacts access", "harassment", "along"],
+  "risk_level": "HIGH",
+  "region": "nationwide",
+  "language": "en"
+}
