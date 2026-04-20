@@ -25,7 +25,8 @@ export function ScanInput({ onScan, loading }) {
       input_type: typeMap[activeTab],
       raw_content: inputVal,
       extracted_entities: {},
-      metadata: { browser: navigator.userAgent }
+      metadata: { browser: navigator.userAgent },
+      user_id: 'anonymous'
     });
   };
 

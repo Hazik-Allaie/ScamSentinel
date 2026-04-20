@@ -37,8 +37,8 @@ export function Scan() {
         <VerdictCard verdict={data.verdict} />
       )}
 
-      {data && data.verdict?.tier === 'HIGH' && data.report_template && (
-        <PdrmReport reportTemplate={data.report_template} />
+      {data && data.verdict?.tier === 'HIGH' && data.pdrm_report_template && (
+        <PdrmReport reportTemplate={data.pdrm_report_template} />
       )}
     </div>
   );

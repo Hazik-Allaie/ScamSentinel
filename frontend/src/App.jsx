@@ -25,7 +25,8 @@ function App() {
               {[
                 { to: '/', label: 'THREAT MAP' },
                 { to: '/scan', label: 'SCANNER' },
-                { to: '/intercept', label: 'VAULT' }
+                { to: '/intercept', label: 'VAULT' },
+                { to: '/feed', label: 'INTEL FEED' }
               ].map(item => (
                 <NavLink 
                   key={item.label}

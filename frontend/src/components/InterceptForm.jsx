@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
 export function InterceptForm({ onIntercept, loading, result }) {
-  const [identifier, setIdentifier] = useState('');
   const [type, setType] = useState('bank_account');
+  const [identifier, setIdentifier] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!identifier.trim()) return;
-    onIntercept({ identifier, identifier_type: type });
+    onIntercept({
+      identifier: identifier.trim(),
+      identifier_type: type,
+      user_id: 'anonymous'
+    });
   };
 
   return (
@@ -61,16 +65,17 @@ export function InterceptForm({ onIntercept, loading, result }) {
               }`}>
                 {result.verdict === 'BLOCK' ? 'Intercept & Block' : 'Clearance Granted'}
               </h3>
-              <span className="font-mono text-[10px] opacity-40 uppercase tracking-widest">Conf: {(result.confidence * 100).toFixed(0)}%</span>
+              <span className="font-mono text-[10px] opacity-40 uppercase tracking-widest">
+                Conf: {(result.confidence * 100).toFixed(0)}% // {result.processing_ms}ms
+              </span>
             </div>
             <p className="text-white/70 text-xs leading-relaxed font-mono relative z-10">
-              {result.verdict === 'BLOCK' 
-                ? 'Signal matches known mule node. Immediate transaction termination recommended.' 
-                : 'No match in high-risk database. Proceed with standard caution protocols.'}
+              {result.explanation}
             </p>
-            {/* Background glitch effect for block */}
-            {result.verdict === 'BLOCK' && (
-              <div className="absolute top-0 right-0 p-2 opacity-10 font-black text-4xl text-[var(--color-risk-high)] select-none">!</div>
+            {result.matched_report_id && (
+              <p className="text-[10px] text-white/30 mt-3 font-mono">
+                Matched Report: {result.matched_report_id}
+              </p>
             )}
           </div>
         )}

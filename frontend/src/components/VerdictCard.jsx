@@ -3,8 +3,7 @@ import React from 'react';
 export function VerdictCard({ verdict }) {
   if (!verdict) return null;
 
-  // Map backend properties to expected variables
-  const { tier, score, reasoning, indicators, sources } = verdict;
+  const { threat_type, risk_score, tier, explanation, confidence, cited_sources, rag_passages_used, model_used, processing_ms } = verdict;
 
   const config = {
     HIGH: { 
@@ -42,7 +41,7 @@ export function VerdictCard({ verdict }) {
   const { color, bg, label, icon } = config[tier] || config.LOW;
 
   return (
-    <div className="mt-8 animate-[var(--animate-slide-up)] relative">
+    <div className="mt-8 animate-[var(--animate-slide-up)] relative" role="alert" aria-live="assertive">
       <div className="absolute -inset-1 blur-xl opacity-20" style={{ backgroundColor: color }}></div>
       <div 
         className="relative bg-[#10131a] border-l-4 p-8 rounded-sm shadow-2xl overflow-hidden"
@@ -65,40 +64,53 @@ export function VerdictCard({ verdict }) {
                 <h2 className="font-display font-black text-3xl uppercase tracking-tight" style={{ color: color }}>{label}</h2>
               </div>
               <div className="text-right">
-                <div className="font-display font-black text-4xl" style={{ color: color }}>{score}<span className="text-sm opacity-30">/100</span></div>
+                <div className="font-display font-black text-4xl" style={{ color: color }}>{risk_score}<span className="text-sm opacity-30">/100</span></div>
                 <div className="text-[10px] uppercase tracking-widest opacity-40">Risk Index Score</div>
               </div>
             </div>
 
+            {/* Threat type badge */}
+            <div className="flex items-center gap-3 mb-4">
+              <span className="px-3 py-1 text-[9px] font-black uppercase tracking-tighter rounded-sm" style={{ backgroundColor: bg, color: color }}>
+                {threat_type?.replace(/_/g, ' ') || 'UNKNOWN'}
+              </span>
+              <span className="text-[9px] text-white/20 font-mono uppercase">
+                Confidence: {(confidence * 100).toFixed(0)}% // {processing_ms}ms // {model_used}
+              </span>
+            </div>
+
             <div className="bg-white/[0.03] border border-white/5 p-6 rounded-sm mb-6">
               <p className="text-white/80 leading-relaxed text-sm italic">
-                "{reasoning}"
+                "{explanation}"
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-3 underline decoration-[var(--color-primary)]/30 underline-offset-4">Verified Indicators</h4>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-3 underline decoration-[var(--color-primary)]/30 underline-offset-4">Cited Sources</h4>
                 <ul className="space-y-2">
-                  {(indicators || []).length > 0 ? indicators.map((ind, i) => (
+                  {(cited_sources || []).length > 0 ? cited_sources.map((src, i) => (
                     <li key={i} className="flex items-center gap-2 text-xs text-white/70">
                       <span className="w-1.5 h-1.5 rotate-45" style={{ backgroundColor: color }}></span>
-                      {ind}
+                      {src}
                     </li>
                   )) : (
-                    <li className="text-xs text-white/30 italic">No specific indicators found</li>
+                    <li className="text-xs text-white/30 italic">General model intelligence</li>
                   )}
                 </ul>
               </div>
               <div>
-                <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-3 underline decoration-[var(--color-primary)]/30 underline-offset-4">Intelligence Sources</h4>
-                <div className="flex flex-wrap gap-2">
-                  {(sources || []).length > 0 ? sources.map((src, i) => (
-                    <span key={i} className="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-[9px] font-bold uppercase tracking-tighter text-white/60">
-                      REF_{src.toString().toUpperCase()}
-                    </span>
+                <h4 className="text-[10px] font-bold uppercase tracking-widest text-white/30 mb-3 underline decoration-[var(--color-primary)]/30 underline-offset-4">RAG Passages</h4>
+                <div className="space-y-2">
+                  {(rag_passages_used || []).length > 0 ? rag_passages_used.slice(0, 3).map((passage, i) => (
+                    <div key={i} className="px-3 py-2 bg-white/[0.02] border border-white/5 rounded-sm">
+                      <div className="text-[9px] font-bold uppercase tracking-tighter text-[var(--color-primary)] mb-1">
+                        [{passage.source}] {passage.document_id}
+                      </div>
+                      <p className="text-[10px] text-white/40 line-clamp-2">{passage.passage_text}</p>
+                    </div>
                   )) : (
-                    <span className="text-[9px] uppercase tracking-tighter text-white/20">General Model Intelligence</span>
+                    <span className="text-[9px] uppercase tracking-tighter text-white/20">No RAG passages retrieved</span>
                   )}
                 </div>
               </div>

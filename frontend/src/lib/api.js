@@ -39,5 +39,16 @@ export const api = {
     method: 'POST',
     body: JSON.stringify(data),
   }),
+  feed: (params = {}) => {
+    const query = new URLSearchParams();
+    if (params.limit) query.set('limit', params.limit);
+    if (params.threat_type) query.set('threat_type', params.threat_type);
+    if (params.region) query.set('region', params.region);
+    return fetchWithAuth(`/api/v1/feed?${query.toString()}`);
+  },
+  report: (data) => fetchWithAuth('/api/v1/report', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }),
   health: () => fetchWithAuth('/api/v1/health'),
 };
