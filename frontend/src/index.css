@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@500;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hud-glow {
+    text-shadow: 0 0 10px rgba(0, 218, 243, 0.5);
+  }
+  .hud-border {
+    border: 1px solid rgba(132, 147, 150, 0.15);
+  }
+}
+
+@theme {
+  --color-background: #10131a;
+  --color-surface: #10131a;
+  --color-surface-container-low: #191c22;
+  --color-surface-container: #1d2026;
+  --color-surface-container-highest: #32353c;
+  --color-primary: #c3f5ff;
+  --color-primary-container: #00e5ff;
+  --color-on-primary: #00363d;
+  --color-secondary: #ddb7ff;
+  --color-secondary-container: #6f00be;
+  --color-on-secondary-container: #d6a9ff;
+  --color-tertiary: #ebebff;
+  --color-surface-tint: #00daf3;
+  --color-outline-variant: rgba(59, 73, 76, 0.15);
+  --color-on-surface: #e1e2eb;
+  
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Risk Tiers */
+  --color-risk-high: #ff4d4d;
+  --color-risk-high-bg: rgba(255, 77, 77, 0.1);
+  --color-risk-medium: #ffb703;
+  --color-risk-medium-bg: rgba(255, 183, 3, 0.1);
+  --color-risk-low: #06d6a0;
+  --color-risk-low-bg: rgba(6, 214, 160, 0.1);
+
+  /* Animations */
+  --animate-slide-up: slideUp 0.3s ease-out forwards;
+  --animate-fade-in: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  background-color: var(--color-background);
+  background-image: linear-gradient(rgba(16, 19, 26, 0.8), rgba(16, 19, 26, 0.8)), url('/images/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.glass-panel {
+  background-color: rgba(29, 32, 38, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-outline-variant);
+}
+
+.hud-button {
+  transition: all 0.2s ease-in-out;
+}
+
+.hud-button:hover {
+  box-shadow: 0 0 15px var(--color-primary);
+  filter: brightness(1.1);
+}
+

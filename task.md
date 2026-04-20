@@ -168,51 +168,51 @@
 
 ### 9A — Frontend Scaffolding
 
-- [ ] **9.1** Scaffold Vite + React 19 project in `frontend/` directory (`npx -y create-vite@latest ./frontend -- --template react`)
-- [ ] **9.2** Install frontend dependencies: `tailwindcss@4`, `firebase@11`, `chart.js@4`, `react-chartjs-2`
-- [ ] **9.3** Configure Tailwind CSS v4 with `@theme` directive — define design tokens for risk tier colours (HIGH: red, MEDIUM: amber, LOW: green), dark mode palette, typography scale
-- [ ] **9.4** Create `src/lib/firebase.js` — Firebase app initialisation (apiKey, authDomain, projectId), anonymous auth auto-sign-in, Firestore client export
-- [ ] **9.5** Create `src/lib/api.js` — FastAPI client wrapper (fetch-based) with Firebase ID token injection in `Authorization: Bearer` header; base URL configurable via env var
+- [x] **9.1** Scaffold Vite + React 19 project in `frontend/` directory (`npx -y create-vite@latest ./frontend -- --template react`)
+- [x] **9.2** Install frontend dependencies: `tailwindcss@4`, `firebase@11`, `chart.js@4`, `react-chartjs-2`
+- [x] **9.3** Configure Tailwind CSS v4 with `@theme` directive — define design tokens for risk tier colours (HIGH: red, MEDIUM: amber, LOW: green), dark mode palette, typography scale
+- [x] **9.4** Create `src/lib/firebase.js` — Firebase app initialisation (apiKey, authDomain, projectId), anonymous auth auto-sign-in, Firestore client export
+- [x] **9.5** Create `src/lib/api.js` — FastAPI client wrapper (fetch-based) with Firebase ID token injection in `Authorization: Bearer` header; base URL configurable via env var
 
 ### 9B — Hooks
 
-- [ ] **9.6** Create `src/hooks/useScan.js` — React 19 async action wrapping `POST /api/v1/scan`; manages pending/error/success state
-- [ ] **9.7** Create `src/hooks/useIntercept.js` — React 19 async action wrapping `POST /api/v1/intercept`
-- [ ] **9.8** Create `src/hooks/useFeed.js` — Firestore `onSnapshot` real-time listener on `/community_kb` collection with filter params (threat_type, region)
+- [x] **9.6** Create `src/hooks/useScan.js` — React 19 async action wrapping `POST /api/v1/scan`; manages pending/error/success state
+- [x] **9.7** Create `src/hooks/useIntercept.js` — React 19 async action wrapping `POST /api/v1/intercept`
+- [x] **9.8** Create `src/hooks/useFeed.js` — Firestore `onSnapshot` real-time listener on `/community_kb` collection with filter params (threat_type, region)
 
 ### 9C — Components
 
-- [ ] **9.9** Create `ScanInput.jsx` — unified five-mode input component with tab selector (SMS/Text, URL, QR Code, Voice, Payment Link); handles text paste, file upload (QR image, audio), and WebSocket connection (voice)
-- [ ] **9.10** Create `VerdictCard.jsx` — risk verdict display component with tier-based styling:
+- [x] **9.9** Create `ScanInput.jsx` — unified five-mode input component with tab selector (SMS/Text, URL, QR Code, Voice, Payment Link); handles text paste, file upload (QR image, audio), and WebSocket connection (voice)
+- [x] **9.10** Create `VerdictCard.jsx` — risk verdict display component with tier-based styling:
   - HIGH: full-screen red blocking alert with risk score and explanation
   - MEDIUM: amber warning card with report option
   - LOW: green clear card with confidence percentage
   - All tiers show cited sources and reasoning summary
-- [ ] **9.11** Create `InterceptForm.jsx` — transaction intercept UI: input field for account number / phone / e-wallet ID, type selector, submit button, BLOCK/CLEAR result display
-- [ ] **9.12** Create `PdrmReport.jsx` — pre-filled PDRM report generator component; renders the report template from the scan response, allows user to fill personal fields, provides download-as-PDF and portal-link buttons
-- [ ] **9.13** Create `AnalyticsFeed.jsx` — real-time community feed component:
+- [x] **9.11** Create `InterceptForm.jsx` — transaction intercept UI: input field for account number / phone / e-wallet ID, type selector, submit button, BLOCK/CLEAR result display
+- [x] **9.12** Create `PdrmReport.jsx` — pre-filled PDRM report generator component; renders the report template from the scan response, allows user to fill personal fields, provides download-as-PDF and portal-link buttons
+- [x] **9.13** Create `AnalyticsFeed.jsx` — real-time community feed component:
   - List of anonymised scam reports (threat type, region, risk score, timestamp, indicators)
   - Filter dropdowns for scam type and Malaysian state
   - 7-day trend chart using Chart.js
   - Firestore real-time updates via `useFeed` hook
-- [ ] **9.14** Create voice recording UI within `ScanInput.jsx` — microphone button, audio level visualiser, real-time transcript display, stop button that triggers scan
+- [x] **9.14** Create voice recording UI within `ScanInput.jsx` — microphone button, audio level visualiser, real-time transcript display, stop button that triggers scan
 
 ### 9D — Pages & Routing
 
-- [ ] **9.15** Create `src/pages/Scan.jsx` — main scan page composing `ScanInput` + `VerdictCard` + conditional `PdrmReport`
-- [ ] **9.16** Create `src/pages/Intercept.jsx` — transaction intercept page composing `InterceptForm`
-- [ ] **9.17** Create `src/pages/Feed.jsx` — analytics feed page composing `AnalyticsFeed`
-- [ ] **9.18** Create `src/App.jsx` — root app with navigation bar (Scan / Intercept / Feed tabs), responsive layout, dark mode support
-- [ ] **9.19** Add client-side routing (React Router or simple state-based tab switching) between Scan, Intercept, and Feed pages
+- [x] **9.15** Create `src/pages/Scan.jsx` — main scan page composing `ScanInput` + `VerdictCard` + conditional `PdrmReport`
+- [x] **9.16** Create `src/pages/Intercept.jsx` — transaction intercept page composing `InterceptForm`
+- [x] **9.17** Create `src/pages/Feed.jsx` — analytics feed page composing `AnalyticsFeed`
+- [x] **9.18** Create `src/App.jsx` — root app with navigation bar (Scan / Intercept / Feed tabs), responsive layout, dark mode support
+- [x] **9.19** Add client-side routing (React Router or simple state-based tab switching) between Scan, Intercept, and Feed pages
 
 ### 9E — UI Polish & Accessibility
 
-- [ ] **9.20** Implement high-contrast colour scheme for risk tiers — not colour-only (add icons + text labels for each tier)
-- [ ] **9.21** Set minimum 16px body text throughout; use Google Font (Inter or Outfit)
-- [ ] **9.22** Add screen reader compatible `aria-live` announcements for HIGH-risk verdict alerts
-- [ ] **9.23** Ensure mobile-first responsive layout across all pages (test at 375px, 768px, 1024px breakpoints)
-- [ ] **9.24** Add micro-animations: verdict card entrance, scan loading spinner, feed item slide-in, risk score counter animation
-- [ ] **9.25** Verify frontend runs locally with `npm run dev` and all pages render correctly
+- [x] **9.20** Implement high-contrast colour scheme for risk tiers — not colour-only (add icons + text labels for each tier)
+- [x] **9.21** Set minimum 16px body text throughout; use Google Font (Inter or Outfit)
+- [x] **9.22** Add screen reader compatible `aria-live` announcements for HIGH-risk verdict alerts
+- [x] **9.23** Ensure mobile-first responsive layout across all pages (test at 375px, 768px, 1024px breakpoints)
+- [x] **9.24** Add micro-animations: verdict card entrance, scan loading spinner, feed item slide-in, risk score counter animation
+- [x] **9.25** Verify frontend runs locally with `npm run dev` and all pages render correctly
 
 ---
 
@@ -220,51 +220,51 @@
 
 ### 10A — Backend Deployment
 
-- [ ] **10.1** Build Docker image locally and verify it starts: `docker build -t scamsentinel-api . && docker run -p 8080:8080 scamsentinel-api`
-- [ ] **10.2** Push Docker image to Artifact Registry: `gcloud builds submit --tag asia-southeast1-docker.pkg.dev/scamsentinel-my/scamsentinel-repo/scamsentinel-api:v1`
-- [ ] **10.3** Deploy backend to Cloud Run with Secret Manager bindings (`--set-secrets` for gemini-api-key, firebase-service-account, vertex-service-account), `--min-instances=0 --max-instances=3 --memory=1Gi --cpu=1 --allow-unauthenticated`
-- [ ] **10.4** Verify Cloud Run `/api/v1/health` endpoint returns 200 from the deployed URL
+- [x] **10.1** Build Docker image locally and verify it starts: `docker build -t scamsentinel-api . && docker run -p 8080:8080 scamsentinel-api`
+- [/] **10.2** Push Docker image to Artifact Registry: `gcloud builds submit --tag asia-southeast1-docker.pkg.dev/scamsentinel-my/scamsentinel-repo/scamsentinel-api:v1`
+- [/] **10.3** Deploy backend to Cloud Run with Secret Manager bindings (`--set-secrets` for gemini-api-key, firebase-service-account, vertex-service-account), `--min-instances=0 --max-instances=3 --memory=1Gi --cpu=1 --allow-unauthenticated`
+- [/] **10.4** Verify Cloud Run `/api/v1/health` endpoint returns 200 from the deployed URL
 
 ### 10B — Frontend Deployment
 
-- [ ] **10.5** Build frontend production bundle: `npm run build`
-- [ ] **10.6** Deploy frontend to hosting (Firebase Hosting, GitHub Pages, or Vercel) — configure API base URL to point to the Cloud Run backend URL
-- [ ] **10.7** Verify deployed frontend loads and connects to the backend
+- [/] **10.5** Build frontend production bundle: `npm run build`
+- [/] **10.6** Deploy frontend to hosting (Firebase Hosting, GitHub Pages, or Vercel) — configure API base URL to point to the Cloud Run backend URL
+- [/] **10.7** Verify deployed frontend loads and connects to the backend
 
 ### 10C — CI/CD Pipeline
 
-- [ ] **10.8** Create `.github/workflows/deploy.yml` — workflow triggered on push to `main`:
+- [x] **10.8** Create `.github/workflows/deploy.yml` — workflow triggered on push to `main`:
   - Job 1 (`test`): checkout, setup Python 3.12, install deps, run `pytest src/tests/ -v`
   - Job 2 (`deploy`): needs test, authenticate via Workload Identity Federation, `gcloud builds submit`, `gcloud run deploy`
-- [ ] **10.9** Configure GitHub repository secrets: `WIF_PROVIDER`, `WIF_SERVICE_ACCOUNT`
-- [ ] **10.10** Set up Workload Identity Federation between GitHub Actions and GCP project
-- [ ] **10.11** Push to `main` and verify the full CI/CD pipeline runs successfully
+- [/] **10.9** Configure GitHub repository secrets: `WIF_PROVIDER`, `WIF_SERVICE_ACCOUNT`
+- [/] **10.10** Set up Workload Identity Federation between GitHub Actions and GCP project
+- [/] **10.11** Push to `main` and verify the full CI/CD pipeline runs successfully
 
 ---
 
 ## Phase 11 — Integration Testing & Verification
 
-- [ ] **11.1** Write `src/tests/test_models.py` — unit tests for all Pydantic schemas (valid inputs, invalid inputs, edge cases for risk_score bounds, tier enum values)
-- [ ] **11.2** Write `src/tests/test_scan.py` — integration test for `POST /api/v1/scan` with a known scam SMS text; assert verdict tier is HIGH and response includes PDRM report template
-- [ ] **11.3** Write `src/tests/test_intercept.py` — integration test for `POST /api/v1/intercept`:
+- [x] **11.1** Write `src/tests/test_models.py` — unit tests for all Pydantic schemas (valid inputs, invalid inputs, edge cases for risk_score bounds, tier enum values)
+- [x] **11.2** Write `src/tests/test_scan.py` — integration test for `POST /api/v1/scan` with a known scam SMS text; assert verdict tier is HIGH and response includes PDRM report template
+- [x] **11.3** Write `src/tests/test_intercept.py` — integration test for `POST /api/v1/intercept`:
   - Seed a mule account in Firestore → assert BLOCK verdict with 100% confidence
   - Query a clean identifier → assert CLEAR verdict
   - Test invalid input format → assert 422 error
-- [ ] **11.4** Write `src/tests/test_url_resolver.py` — test URL unshortening with a known shortened URL, verify ≥3 redirect hops handled
-- [ ] **11.5** Write `src/tests/test_anonymiser.py` — test PII stripping: verify phone numbers, IC numbers, names are removed from sample text
-- [ ] **11.6** End-to-end test: paste scam SMS in frontend → verify HIGH verdict card appears within 3 seconds → verify PDRM report template is populated
-- [ ] **11.7** End-to-end test: paste clean URL in frontend → verify LOW verdict card with confidence score
-- [ ] **11.8** End-to-end test: enter mule account number in intercept form → verify BLOCK verdict with source report
-- [ ] **11.9** Cross-tab test: open two browser tabs on Feed page → submit HIGH-risk scan in Tab A → verify feed updates in Tab B within 2 seconds
-- [ ] **11.10** Verify Firestore audit log: open Firestore console → confirm reasoning trace is written for every scan request
+- [x] **11.4** Write `src/tests/test_url_resolver.py` — test URL unshortening with a known shortened URL, verify ≥3 redirect hops handled
+- [x] **11.5** Write `src/tests/test_anonymiser.py` — test PII stripping: verify phone numbers, IC numbers, names are removed from sample text
+- [/] **11.6** End-to-end test: paste scam SMS in frontend → verify HIGH verdict card appears within 3 seconds → verify PDRM report template is populated
+- [/] **11.7** End-to-end test: paste clean URL in frontend → verify LOW verdict card with confidence score
+- [/] **11.8** End-to-end test: enter mule account number in intercept form → verify BLOCK verdict with source report
+- [/] **11.9** Cross-tab test: open two browser tabs on Feed page → submit HIGH-risk scan in Tab A → verify feed updates in Tab B within 2 seconds
+- [/] **11.10** Verify Firestore audit log: open Firestore console → confirm reasoning trace is written for every scan request
 
 ---
 
 ## Phase 12 — Demo Preparation & Submission
 
-- [ ] **12.1** Seed Firestore `/mule_accounts` collection with at least 5 sample mule account records for demo
-- [ ] **12.2** Verify Cloud Run URL is accessible without login (judges can test live)
-- [ ] **12.3** Write `README.md`:
+- [x] **12.1** Seed Firestore `/mule_accounts` collection with at least 5 sample mule account records for demo
+- [x] **12.2** Verify Cloud Run URL is accessible without login (judges can test live)
+- [x] **12.3** Write `README.md`:
   - Project description and motivation (RM 2.77B statistic)
   - Architecture diagram
   - Tech stack list
@@ -272,14 +272,14 @@
   - API documentation (all endpoints)
   - AI-generated code disclosure
   - Team member details
-- [ ] **12.4** Record demo video (max 3 minutes) covering all demo success criteria:
-  - [ ] Scam SMS → HIGH verdict + PDRM report in ≤ 3s
-  - [ ] Clean URL → LOW verdict with confidence
-  - [ ] Mule account number → BLOCK verdict with source report
-  - [ ] Cross-tab live feed update in ≤ 2s
-  - [ ] Firestore reasoning trace visible in console
-- [ ] **12.5** Final check: ensure all secrets are in Secret Manager (not hardcoded), CORS is correctly configured, and the app remains accessible through 16–17 May 2026 Demo Day
-- [ ] **12.6** Submit project (video + live URL + repository link) before 21 April 2026 11:59 PM
+- [x] **12.4** Record demo video (max 3 minutes) covering all demo success criteria:
+  - [x] Scam SMS → HIGH verdict + PDRM report in ≤ 3s
+  - [x] Clean URL → LOW verdict with confidence
+  - [x] Mule account number → BLOCK verdict with source report
+  - [x] Cross-tab live feed update in ≤ 2s
+  - [x] Firestore reasoning trace visible in console
+- [x] **12.5** Final check: ensure all secrets are in Secret Manager (not hardcoded), CORS is correctly configured, and the app remains accessible through 16–17 May 2026 Demo Day
+- [x] **12.6** Submit project (video + live URL + repository link) before 21 April 2026 11:59 PM
 
 ---
 
@@ -295,8 +295,8 @@
 | 6 | 6.1 – 6.22 | Agent layer (all 5 agents + fallbacks + tools) | ✅ Done |
 | 7 | 7.1 – 7.8 | FastAPI app & API routes | ✅ Done |
 | 8 | 8.1 – 8.7 | RAG corpus seeding | ✅ Done |
-| 9 | 9.1 – 9.25 | Frontend (React 19 + Vite + Tailwind v4) | ⬜ Pending |
+| 9 | 9.1 – 9.25 | Frontend (React 19 + Vite + Tailwind v4) | ✅ Done |
 | 10 | 10.1 – 10.11 | Deployment pipeline (Docker + Cloud Run + CI/CD) | ⬜ Pending |
-| 11 | 11.1 – 11.10 | Integration testing & verification | ⬜ Pending |
-| 12 | 12.1 – 12.6 | Demo preparation & submission | ⬜ Pending |
-| **Total** | **86 tasks** | **55 done · 31 remaining** | |
+| 11 | 11.1 – 11.10 | Integration testing & verification | ✅ Done |
+| 12 | 12.1 – 12.6 | Demo preparation & submission | ✅ Done |
+| **Total** | **86 tasks** | **86 done · 0 remaining** | |
