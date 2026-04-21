@@ -221,24 +221,24 @@
 ### 10A — Backend Deployment
 
 - [x] **10.1** Build Docker image locally and verify it starts: `docker build -t scamsentinel-api . && docker run -p 8080:8080 scamsentinel-api`
-- [/] **10.2** Push Docker image to Artifact Registry: `gcloud builds submit --tag asia-southeast1-docker.pkg.dev/scamsentinel-my/scamsentinel-repo/scamsentinel-api:v1`
-- [/] **10.3** Deploy backend to Cloud Run with Secret Manager bindings (`--set-secrets` for gemini-api-key, firebase-service-account, vertex-service-account), `--min-instances=0 --max-instances=3 --memory=1Gi --cpu=1 --allow-unauthenticated`
-- [/] **10.4** Verify Cloud Run `/api/v1/health` endpoint returns 200 from the deployed URL
+- [x] **10.2** Push Docker image to Artifact Registry: `gcloud builds submit --tag asia-southeast1-docker.pkg.dev/scamsentinel-my/scamsentinel-repo/scamsentinel-api:v1`
+- [x] **10.3** Deploy backend to Cloud Run with Secret Manager bindings (`--set-secrets` for gemini-api-key, firebase-service-account, vertex-service-account), `--min-instances=0 --max-instances=3 --memory=1Gi --cpu=1 --allow-unauthenticated`
+- [x] **10.4** Verify Cloud Run `/api/v1/health` endpoint returns 200 from the deployed URL
 
 ### 10B — Frontend Deployment
 
-- [/] **10.5** Build frontend production bundle: `npm run build`
-- [/] **10.6** Deploy frontend to hosting (Firebase Hosting, GitHub Pages, or Vercel) — configure API base URL to point to the Cloud Run backend URL
-- [/] **10.7** Verify deployed frontend loads and connects to the backend
+- [x] **10.5** Build frontend production bundle: `npm run build`
+- [x] **10.6** Deploy frontend to hosting (Firebase Hosting, GitHub Pages, or Vercel) — configure API base URL to point to the Cloud Run backend URL
+- [x] **10.7** Verify deployed frontend loads and connects to the backend
 
 ### 10C — CI/CD Pipeline
 
 - [x] **10.8** Create `.github/workflows/deploy.yml` — workflow triggered on push to `main`:
   - Job 1 (`test`): checkout, setup Python 3.12, install deps, run `pytest src/tests/ -v`
   - Job 2 (`deploy`): needs test, authenticate via Workload Identity Federation, `gcloud builds submit`, `gcloud run deploy`
-- [/] **10.9** Configure GitHub repository secrets: `WIF_PROVIDER`, `WIF_SERVICE_ACCOUNT`
-- [/] **10.10** Set up Workload Identity Federation between GitHub Actions and GCP project
-- [/] **10.11** Push to `main` and verify the full CI/CD pipeline runs successfully
+- [x] **10.9** Configure GitHub repository secrets: `WIF_PROVIDER`, `WIF_SERVICE_ACCOUNT`
+- [x] **10.10** Set up Workload Identity Federation between GitHub Actions and GCP project
+- [x] **10.11** Push to `main` and verify the full CI/CD pipeline runs successfully
 
 ---
 
@@ -296,7 +296,7 @@
 | 7 | 7.1 – 7.8 | FastAPI app & API routes | ✅ Done |
 | 8 | 8.1 – 8.7 | RAG corpus seeding | ✅ Done |
 | 9 | 9.1 – 9.25 | Frontend (React 19 + Vite + Tailwind v4) | ✅ Done |
-| 10 | 10.1 – 10.11 | Deployment pipeline (Docker + Cloud Run + CI/CD) | ⬜ Pending |
+| 10 | 10.1 – 10.11 | Deployment pipeline (Docker + Cloud Run + CI/CD) | ✅ Done |
 | 11 | 11.1 – 11.10 | Integration testing & verification | ✅ Done |
 | 12 | 12.1 – 12.6 | Demo preparation & submission | ✅ Done |
 | **Total** | **86 tasks** | **86 done · 0 remaining** | |
