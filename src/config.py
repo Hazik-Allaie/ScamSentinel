@@ -52,4 +52,5 @@ settings = Settings()
 
 # Set GOOGLE_APPLICATION_CREDENTIALS for local development with Vertex AI
 if settings.FIREBASE_SA_PATH and not os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = settings.FIREBASE_SA_PATH
+    if not settings.FIREBASE_SA_PATH.strip().startswith("{"):
+        os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = settings.FIREBASE_SA_PATH

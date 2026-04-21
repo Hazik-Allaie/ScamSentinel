@@ -19,11 +19,11 @@ def init_firestore() -> None:
     """
     Initialise the Firestore client singleton.
     Called once at app startup in main.py lifespan handler.
-    Uses Application Default Credentials (ADC) on Cloud Run,
-    or GOOGLE_APPLICATION_CREDENTIALS locally.
+    Uses the Initialised firebase admin app credentials correctly.
     """
     global _db
-    _db = firestore.Client()
+    from firebase_admin import firestore as fa_firestore
+    _db = fa_firestore.client()
 
 
 def get_db() -> firestore.Client:

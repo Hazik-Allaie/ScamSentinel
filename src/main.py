@@ -41,7 +41,12 @@ async def lifespan(app: FastAPI):
     # Init Firebase Admin
     try:
         if settings.FIREBASE_SA_PATH:
-            cred = credentials.Certificate(settings.FIREBASE_SA_PATH)
+            if settings.FIREBASE_SA_PATH.strip().startswith("{"):
+                import json
+                cred_dict = json.loads(settings.FIREBASE_SA_PATH)
+                cred = credentials.Certificate(cred_dict)
+            else:
+                cred = credentials.Certificate(settings.FIREBASE_SA_PATH)
             firebase_admin.initialize_app(cred)
         else:
             # Use Application Default Credentials on Cloud Run
