@@ -1,8 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export function InterceptForm({ onIntercept, loading, result }) {
   const [type, setType] = useState('bank_account');
   const [identifier, setIdentifier] = useState('');
+
+  // Reset form fields when a new result arrives
+  useEffect(() => {
+    if (result) {
+      setIdentifier('');
+    }
+  }, [result]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +17,6 @@ export function InterceptForm({ onIntercept, loading, result }) {
     onIntercept({
       identifier: identifier.trim(),
       identifier_type: type,
-      user_id: 'anonymous'
     });
   };
 

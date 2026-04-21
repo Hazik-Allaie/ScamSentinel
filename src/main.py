@@ -141,6 +141,7 @@ async def intercept(
     Checks recipient identifier against mule account index.
     """
     start = time.time()
+    request.user_id = user_id
 
     result = await check_mule_account(
         identifier=request.identifier,

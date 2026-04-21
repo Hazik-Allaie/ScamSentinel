@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useFeed } from '../hooks/useFeed';
 import {
   Chart as ChartJS,
@@ -32,13 +32,52 @@ export function AnalyticsFeed() {
     region: region
   });
 
-  // Simple aggregations for chart (mocked dates for demo if feed is sparse)
+  const { labels, data } = useMemo(() => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // Create labels for the last 7 days
+    const last7Days = Array.from({ length: 7 }, (_, i) => {
+      const d = new Date(today);
+      d.setDate(d.getDate() - (6 - i));
+      return d;
+    });
+
+    const outLabels = last7Days.map(d => d.toLocaleDateString(undefined, { weekday: 'short' }));
+    const outData = [0, 0, 0, 0, 0, 0, 0];
+
+    // Aggregate feed items into the 7 day buckets
+    feed.forEach(item => {
+      let itemDate;
+      if (item.timestamp && item.timestamp.seconds) {
+        itemDate = new Date(item.timestamp.seconds * 1000);
+      } else if (item.timestamp) {
+        itemDate = new Date(item.timestamp);
+      } else {
+        itemDate = new Date(); // If live or no timestamp, assume today
+      }
+      
+      const dateCopy = new Date(itemDate);
+      dateCopy.setHours(0, 0, 0, 0);
+      
+      const diffTime = today - dateCopy;
+      const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (diffDays >= 0 && diffDays <= 6) {
+        const index = 6 - diffDays;
+        outData[index] += 1;
+      }
+    });
+
+    return { labels: outLabels, data: outData };
+  }, [feed]);
+
   const chartData = {
-    labels: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6', 'Day 7'],
+    labels: labels,
     datasets: [
       {
         label: 'Scam Reports (7 Days)',
-        data: [12, 19, 15, 25, 22, 30, feed.length || 0],
+        data: data,
         borderColor: '#00daf3',
         backgroundColor: 'rgba(0, 218, 243, 0.2)',
         tension: 0.4,
@@ -142,7 +181,7 @@ export function AnalyticsFeed() {
                     {item.threat_type || 'UNKNOWN'}
                   </span>
                   <span className="font-mono text-[10px] text-white/20 uppercase tracking-tighter">
-                    {item.timestamp ? new Date(item.timestamp.seconds * 1000).toLocaleTimeString() : 'LIVE'}
+                    {item.timestamp ? (item.timestamp.seconds ? new Date(item.timestamp.seconds * 1000).toLocaleTimeString() : new Date(item.timestamp).toLocaleTimeString()) : 'LIVE'}
                   </span>
                 </div>
                 <p className="text-xs text-white/60 font-mono line-clamp-1 group-hover:text-white/90 transition-colors">

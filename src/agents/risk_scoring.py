@@ -120,7 +120,7 @@ Produce the verdict JSON now.
     verdict_dict = await _call_gemini(
         system_prompt=RISK_SCORING_SYSTEM_PROMPT,
         user_message=user_message,
-        model="gemini-2.5-flash-latest"
+        model="gemini-2.5-flash"
     )
 
     # Fallback to Pro if Flash confidence is too low
@@ -128,7 +128,7 @@ Produce the verdict JSON now.
         verdict_dict = await _call_gemini(
             system_prompt=RISK_SCORING_SYSTEM_PROMPT,
             user_message=user_message,
-            model="gemini-2.5-pro-latest"
+            model="gemini-2.5-pro"
         )
         model_used = "gemini-2.5-pro"
     else:
@@ -169,8 +169,21 @@ async def _call_gemini(
         generation_config=genai.GenerationConfig(
             temperature=0.1,        # Low temperature for consistent JSON output
             top_p=0.8,
-            max_output_tokens=2048,
+            max_output_tokens=8192,
             response_mime_type="application/json",  # Force JSON output
+            response_schema={
+                "type": "OBJECT",
+                "properties": {
+                    "threat_type": {"type": "STRING"},
+                    "risk_score": {"type": "INTEGER"},
+                    "tier": {"type": "STRING"},
+                    "explanation": {"type": "STRING"},
+                    "confidence": {"type": "NUMBER"},
+                    "cited_sources": {"type": "ARRAY", "items": {"type": "STRING"}},
+                    "reasoning_trace": {"type": "STRING"}
+                },
+                "required": ["threat_type", "risk_score", "tier", "explanation", "confidence", "cited_sources", "reasoning_trace"]
+            }
         ),
     )
 

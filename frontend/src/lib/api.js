@@ -4,8 +4,14 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080
 
 async function fetchWithAuth(endpoint, options = {}) {
   let token = null;
-  if (auth.currentUser) {
-    token = await auth.currentUser.getIdToken();
+  
+  // Guard against auth being undefined (Firebase init may have failed)
+  if (auth && auth.currentUser) {
+    try {
+      token = await auth.currentUser.getIdToken();
+    } catch (e) {
+      console.warn('Failed to get Firebase token, proceeding without auth:', e.message);
+    }
   }
 
   const headers = {

@@ -36,36 +36,36 @@ async def run_orchestrator(request: ScanRequest) -> ScanResponse:
     # Derive semantic query from normalised payload
     query = _build_rag_query(request)
 
-    # Parallel dispatch — core agentic behaviour
+    # Retrieval and Scoring
+    # We now wait for RAG first to ensure the model can cite sources in the reasoning_trace
     try:
-        rag_passages, raw_verdict = await asyncio.gather(
-            _safe_retrieve(query=query, top_k=5),
-            score_risk(payload=request, rag_context=[])  # Initial pass without RAG
-        )
+        rag_passages = await _safe_retrieve(query=query, top_k=5)
+        raw_verdict = await score_risk(payload=request, rag_context=rag_passages)
     except Exception as e:
-        # If both fail, let the error propagate to the route handler
+        # If retrieval fails, let the error propagate or fallback
         raise
 
-    # Re-score with full RAG context if initial confidence < 0.6
-    if raw_verdict.confidence < 0.6 and rag_passages:
-        raw_verdict = await score_risk(
-            payload=request,
-            rag_context=rag_passages
-        )
 
     # Add processing time
     raw_verdict.processing_ms = int(time.time() * 1000) - start_ms
     raw_verdict.model_used = raw_verdict.model_used or "gemini-2.5-flash"
 
     # Write audit log to Firestore before triggering response
-    await write_scan_log(scan_id=scan_id, request=request, verdict=raw_verdict)
+    try:
+        await write_scan_log(scan_id=scan_id, request=request, verdict=raw_verdict)
+    except Exception as e:
+        print(f"[WARN] Firestore write_scan_log failed (continuing without): {e}")
 
     # Execute response flow
-    response_result = await execute_response_flow(
-        verdict=raw_verdict,
-        scan_id=scan_id,
-        user_id=request.user_id
-    )
+    response_result = {"community_pushed": False, "pdrm_report": None}
+    try:
+        response_result = await execute_response_flow(
+            verdict=raw_verdict,
+            scan_id=scan_id,
+            user_id=request.user_id
+        )
+    except Exception as e:
+        print(f"[WARN] Response flow failed (continuing without): {e}")
 
     return ScanResponse(
         scan_id=scan_id,
@@ -86,6 +86,8 @@ async def _safe_retrieve(query: str, top_k: int) -> list:
             retrieve_scam_patterns(query=query, top_k=top_k),
             timeout=settings.VERTEX_SEARCH_TIMEOUT_SECONDS
         )
+    except asyncio.TimeoutError:
+        return vertex_search_unavailable_fallback()
     except Exception:
         return vertex_search_unavailable_fallback()
 

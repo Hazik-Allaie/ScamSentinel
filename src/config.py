@@ -8,6 +8,11 @@ at import time — never re-fetched per request.
 
 import os
 from dataclasses import dataclass, field
+from dotenv import load_dotenv
+
+# Load .env file for local development
+# On Cloud Run, env vars are injected via Secret Manager
+load_dotenv()
 
 
 @dataclass
@@ -34,7 +39,7 @@ class Settings:
     GEMINI_MAX_RETRIES: int = 3
     GEMINI_RETRY_DELAY_SECONDS: float = 1.0
     VERTEX_SEARCH_TIMEOUT_SECONDS: int = 5
-    AGENT_PIPELINE_TIMEOUT_SECONDS: int = 10  # Hard ceiling for full scan latency
+    AGENT_PIPELINE_TIMEOUT_SECONDS: int = 30  # Hard ceiling for full scan latency
 
     # ── Risk Tier Thresholds ─────────────────────────────────
     # These MUST match the frontend VerdictCard thresholds
@@ -44,3 +49,7 @@ class Settings:
 
 # Singleton settings instance — cached at import time
 settings = Settings()
+
+# Set GOOGLE_APPLICATION_CREDENTIALS for local development with Vertex AI
+if settings.FIREBASE_SA_PATH and not os.getenv("GOOGLE_APPLICATION_CREDENTIALS"):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = settings.FIREBASE_SA_PATH

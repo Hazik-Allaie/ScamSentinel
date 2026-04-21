@@ -11,6 +11,7 @@ Returns top-k passage objects with source attribution from:
 Reference: AGENTS_ScamSentinel_MY.md §4
 """
 
+import asyncio
 from google.cloud import discoveryengine_v1 as discoveryengine
 from src.models.verdict import RAGPassage
 from src.config import settings
@@ -24,7 +25,7 @@ async def retrieve_scam_patterns(query: str, top_k: int = 5) -> list[RAGPassage]
     Data store contains: PDRM reports, BNM advisories, MCMC bulletins,
     community-confirmed scam reports (anonymised).
     """
-    client = discoveryengine.SearchServiceClient()
+    client = discoveryengine.SearchServiceAsyncClient()
 
     serving_config = (
         f"projects/{settings.GCP_PROJECT}/locations/global"
@@ -42,19 +43,15 @@ async def retrieve_scam_patterns(query: str, top_k: int = 5) -> list[RAGPassage]
                 return_snippet=True,
                 max_snippet_count=3,
             ),
-            extractive_content_spec=discoveryengine.SearchRequest.ContentSearchSpec.ExtractiveContentSpec(
-                max_extractive_answer_count=1,
-                max_extractive_segment_count=3,
-            ),
         ),
     )
 
-    response = client.search(request)
+    response = await client.search(request)
     passages = []
 
-    for result in response.results:
+    async for result in response:
         doc = result.document
-        doc_data = dict(doc.struct_data)
+        doc_data = dict(doc.struct_data) if doc.struct_data else {}
 
         # Extract source type from document metadata
         source = doc_data.get("source", "unknown")
@@ -84,7 +81,7 @@ async def retrieve_scam_patterns(query: str, top_k: int = 5) -> list[RAGPassage]
                 document_id=doc.id,
                 source=source,
                 passage_text=passage_text[:1000],  # Truncate for prompt safety
-                relevance_score=result.relevance_score or 0.5,
+                relevance_score=getattr(result, 'relevance_score', 0.5) or 0.5,
             ))
 
     return passages

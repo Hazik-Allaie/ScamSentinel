@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 const TABS = ['Text/SMS', 'URL', 'QR Code', 'Voice', 'Payment Link'];
 
@@ -7,6 +7,36 @@ export function ScanInput({ onScan, loading }) {
   const [inputVal, setInputVal] = useState('');
   const [isRecording, setIsRecording] = useState(false);
   const fileInputRef = useRef(null);
+  const recognitionRef = useRef(null);
+
+  useEffect(() => {
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      
+      recognition.onresult = (event) => {
+        let fullTranscript = '';
+        for (let i = 0; i < event.results.length; ++i) {
+          fullTranscript += event.results[i][0].transcript;
+        }
+        setInputVal(fullTranscript);
+      };
+
+      recognition.onerror = (event) => {
+        console.error('Speech recognition error', event.error);
+        setIsRecording(false);
+        setInputVal(`Error: ${event.error}`);
+      };
+
+      recognition.onend = () => {
+        setIsRecording(false);
+      };
+      
+      recognitionRef.current = recognition;
+    }
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +56,6 @@ export function ScanInput({ onScan, loading }) {
       raw_content: inputVal,
       extracted_entities: {},
       metadata: { browser: navigator.userAgent },
-      user_id: 'anonymous'
     });
   };
 
@@ -50,14 +79,26 @@ export function ScanInput({ onScan, loading }) {
   };
 
   const toggleRecording = () => {
-    setIsRecording(!isRecording);
     if (!isRecording) {
-      // Simulate real-time transcript
-      setInputVal('Listening...');
-      setTimeout(() => setInputVal('Help, I need your TAC number...'), 2000);
+      if (recognitionRef.current) {
+        setInputVal('Listening...');
+        setIsRecording(true);
+        try {
+          recognitionRef.current.start();
+        } catch (e) {
+          console.error(e);
+        }
+      } else {
+        setInputVal('Voice recognition is not supported in this browser. Please type your message instead.');
+      }
     } else {
-      // Stop recording and scan
-      handleSubmit({ preventDefault: () => {} });
+      setIsRecording(false);
+      if (recognitionRef.current) {
+        recognitionRef.current.stop();
+      }
+      setTimeout(() => {
+        handleSubmit({ preventDefault: () => {} });
+      }, 500);
     }
   };
 

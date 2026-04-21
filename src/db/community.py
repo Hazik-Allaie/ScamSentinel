@@ -38,7 +38,7 @@ async def get_community_feed(
         query = query.where("region", "==", region)
 
     # Order by newest first, limit results
-    query = query.order_by("created_at", direction="DESCENDING").limit(limit)
+    query = query.order_by("timestamp", direction="DESCENDING").limit(limit)
 
     docs = query.stream()
 
@@ -54,9 +54,9 @@ async def get_community_feed(
             "region": data.get("region", "malaysia"),
             "cited_sources": data.get("cited_sources", []),
             "report_count": data.get("report_count", 1),
-            "created_at": data.get("created_at", "").isoformat()
-            if isinstance(data.get("created_at"), datetime)
-            else str(data.get("created_at", "")),
+            "timestamp": data.get("timestamp", "").isoformat()
+            if isinstance(data.get("timestamp"), datetime)
+            else str(data.get("timestamp", "")),
         })
 
     return feed

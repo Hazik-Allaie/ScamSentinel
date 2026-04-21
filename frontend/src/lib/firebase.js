@@ -11,15 +11,31 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
-const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-export const auth = getAuth(app);
+const isFirebaseConfigured = !!firebaseConfig.apiKey;
+let app;
+let db;
+let auth;
 
-// Automatically sign in anonymously
-signInAnonymously(auth)
-  .then(() => {
-    console.log("Firebase anonymous auth successful");
-  })
-  .catch((error) => {
-    console.error("Firebase auth error:", error);
-  });
+if (isFirebaseConfigured) {
+  try {
+    app = initializeApp(firebaseConfig);
+    db = getFirestore(app);
+    auth = getAuth(app);
+
+    // Automatically sign in anonymously
+    signInAnonymously(auth)
+      .then(() => {
+        console.log("Firebase anonymous auth successful");
+      })
+      .catch((error) => {
+        console.warn("Firebase auth error (non-fatal):", error.message);
+      });
+  } catch (error) {
+    console.warn("Firebase initialization failed (non-fatal):", error.message);
+    console.warn("Some features (feed, community data) will be unavailable. Set VITE_FIREBASE_* env vars to enable.");
+  }
+} else {
+  console.warn("Firebase API Key missing. Some features will use REST fallbacks.");
+}
+
+export { db, auth, isFirebaseConfigured };

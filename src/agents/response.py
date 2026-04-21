@@ -76,7 +76,7 @@ async def _push_to_community_kb(verdict: Verdict, scan_id: str) -> bool:
         "cited_sources": verdict.cited_sources,
         "region": "malaysia",                     # Expand in v2 with geo detection
         "source_scan_id": scan_id,                # Internal reference only
-        "created_at": datetime.now(timezone.utc),
+        "timestamp": datetime.now(timezone.utc),
         "report_count": 1,
     }
 

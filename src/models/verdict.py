@@ -69,7 +69,7 @@ class ScanRequest(BaseModel):
     raw_content: str
     extracted_entities: dict       # Phone numbers, URLs, account numbers found
     metadata: dict                 # Timestamps, user_agent, etc.
-    user_id: str                   # Firebase anonymous UID
+    user_id: str = "anonymous"      # Set server-side from Firebase auth token
 
 
 class ScanResponse(BaseModel):
@@ -84,7 +84,7 @@ class InterceptRequest(BaseModel):
     """Input payload for the /api/v1/intercept endpoint."""
     identifier: str                # Account number, phone, or e-wallet ID
     identifier_type: Literal["bank_account", "phone_number", "ewallet_id"]
-    user_id: str
+    user_id: str = "anonymous"      # Set server-side from Firebase auth token
 
 
 class InterceptVerdict(BaseModel):

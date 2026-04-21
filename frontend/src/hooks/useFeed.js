@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { collection, query, where, orderBy, limit, onSnapshot } from 'firebase/firestore';
-import { db } from '../lib/firebase';
+import { db, isFirebaseConfigured } from '../lib/firebase';
+import { api } from '../lib/api';
 
 export function useFeed(filters = {}) {
   const [feed, setFeed] = useState([]);
@@ -8,6 +9,26 @@ export function useFeed(filters = {}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Guard: if Firestore is not initialized, fallback to REST API
+    if (!isFirebaseConfigured || !db) {
+      api.feed(filters)
+        .then(data => {
+          const mappedData = data.map(item => ({
+            ...item,
+            timestamp: item.timestamp,
+            indicators: item.threat_indicators,
+            score: item.risk_score,
+          }));
+          setFeed(mappedData);
+          setLoading(false);
+        })
+        .catch(err => {
+          setError(err.message || 'REST Feed fallback failed');
+          setLoading(false);
+        });
+      return;
+    }
+
     setLoading(true);
     setError(null);
     try {

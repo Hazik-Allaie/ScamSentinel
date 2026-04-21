@@ -1,52 +1,48 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-*.egg-info/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+test313_env/
+
+# Node / Frontend
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 dist/
 build/
-.eggs/
-*.egg
+.vite/
 
-# Virtual environments
-venv/
-.venv/
-env/
+# Secrets and Credentials
+service_account_key.json
+*.pem
 
-# Environment variables
-.env
-*.env.local
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Service account keys (NEVER commit these)
-*-sa-key.json
-*-service-account.json
-serviceAccountKey.json
-
-# IDE
+# IDEs and Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Node / Frontend
-node_modules/
-frontend/dist/
-frontend/build/
-.cache/
-
-# OS
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# Docker
-*.log
-
-# Testing
+# Coverage and caches
 .pytest_cache/
 .coverage
 htmlcov/
-
-# Gemini / Antigravity
-.gemini/
