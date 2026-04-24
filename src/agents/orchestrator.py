@@ -13,6 +13,7 @@ Reference: AGENTS_ScamSentinel_MY.md §3
 import asyncio
 import time
 import uuid
+import base64
 from typing import Any
 
 from src.models.verdict import ScanRequest, ScanResponse, Verdict
@@ -22,6 +23,7 @@ from src.agents.response import execute_response_flow
 from src.agents.fallbacks import vertex_search_unavailable_fallback
 from src.db.firestore import write_scan_log
 from src.config import settings
+from src.utils.qr_decoder import decode_qr_image
 
 
 async def run_orchestrator(request: ScanRequest) -> ScanResponse:
@@ -32,6 +34,21 @@ async def run_orchestrator(request: ScanRequest) -> ScanResponse:
     """
     start_ms = int(time.time() * 1000)
     scan_id = str(uuid.uuid4())
+
+    if request.input_type == "qr_code" and request.raw_content.startswith("data:image"):
+        try:
+            header, encoded = request.raw_content.split(",", 1)
+            image_bytes = base64.b64decode(encoded)
+            decoded_qr = decode_qr_image(image_bytes)
+            
+            if decoded_qr.error:
+                request.raw_content = f"Failed to decode QR code: {decoded_qr.error}"
+            else:
+                request.raw_content = f"Decoded QR Code Data: {decoded_qr.raw_data}\nQR Type: {decoded_qr.qr_type}"
+                if decoded_qr.payment_payload:
+                    request.extracted_entities["payment_payload"] = decoded_qr.payment_payload
+        except Exception as e:
+            request.raw_content = f"Failed to parse QR code image data: {str(e)}"
 
     # Derive semantic query from normalised payload
     query = _build_rag_query(request)
