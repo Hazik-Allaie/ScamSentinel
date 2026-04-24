@@ -132,5 +132,7 @@ npm run dev
 ## 🏆 Project 2030 Hackathon
 This project was built for **Track 5: Secure Digital**, focusing on strengthening digital trust and safety for all Malaysians.
 
+
+Prototype Link : https://scamsentinel-my.web.app
 ---
 *ScamSentinel MY — Protecting your wealth, one scan at a time.*
